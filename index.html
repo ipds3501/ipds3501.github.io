@@ -582,7 +582,7 @@
 										<div class="d-flex flex-row align-items-center" >
 											<div class="icon m-1 text2" > <i class='fas fa-edit'></i> </div>
 											<div class="ms-2 c-details">
-												<h5 class="mb-0 fantasy text2" >Teknis</h5>
+												<h5 class="mb-0 fantasy text2" >Teknis & Manajemen Kerja</h5>
 											</div>
 										</div>
 										<div class="badge d-flex flex-row align-items-center"> <span class="badge2">6 item</span> </div>
@@ -725,6 +725,13 @@
 		<script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script> 
 		<!-- stats.js lib --> 
 		<script src="https://threejs.org/examples/js/libs/stats.min.js"></script>
+
+
+
+
+
+
+
 		<script type="text/javascript">
 			
 
@@ -767,8 +774,28 @@
 				desc: "Sistem Monitoring dan Evaluasi Kinerja Terpadu.",
 				ikon: "https://smart.kemenkeu.go.id/assets/images/logomonev.png",
 			  	url: "https://smart.kemenkeu.go.id/"
+			},
+			{
+				nama: "MonSakti",
+				desc: "Sistem Monitoring Keuangan Tingkat Instansi",
+				ikon: "https://i.imgur.com/lri52YT.png",
+			  	url: "https://monsakti.kemenkeu.go.id/"
+			},
+			{
+				nama: "SiMonev BPS",
+				desc: "Sistem Informasi Monitoring dan Evaluasi BPS",
+				ikon: "https://monev.bps.go.id/monevnew/login_v2/images/SIMonev.png",
+			  	url: "https://monev.bps.go.id/"
+			},
+			{
+				nama: "CMS BRI",
+				desc: "Sistem Pengelolaan Keuangan BRI",
+				ikon: "https://ibank.bri.co.id/cms/images/leftheadertabel.png",
+			  	url: "https://ibank.bri.co.id/cms/"
 			}
 			];
+
+
 			var teknis_dict = [
 			{
 			  	nama: "Dashboard BPS",
@@ -805,6 +832,18 @@
 				desc: "Sistem Monitoring dan Pelaporan hasil Sensus Penduduk 2020.",
 				ikon: "https://i.imgur.com/93Tgb9p.png",
 			  	url: "http://sp2020mon.herokuapp.com/"
+			},
+			{
+				nama: "KSA BPS",
+				desc: "Sistem Monitoring Peramalan Luas Panen Dengan Menggunakan Metode Kerangka Sampel Area.",
+				ikon: "https://i.imgur.com/isd1dM7.png",
+			  	url: "https://ksa.bps.go.id/"
+			},
+			{
+				nama: "KSA Pro",
+				desc: "Sistem Monitoring Kerangka Sampel Area Padi.",
+				ikon: "https://i.imgur.com/K5IOJKZ.png",
+			  	url: "https://ksapro-manajemen.bps.go.id"
 			}
 			];
 
@@ -814,6 +853,12 @@
 			  	desc: "Sistem Informasi Manajemen Kepegawaian BPS.",
 			  	ikon: "https://simpeg.bps.go.id/data/templates/images/simpeg.webp",
 			  	url: "https://simpeg.bps.go.id/"
+			},
+			{
+			  	nama: "TK Online",
+			  	desc: "Sistem Entri dan Pengelolaan Tunjangan Kinerja",
+			  	ikon: "https://i.imgur.com/XESsfy9.png",
+			  	url: "https://tkonline.bps.go.id/"
 			},
 			{
 			  	nama: "SIPECUT",
@@ -950,7 +995,7 @@
 			});
 
 			$("#teknis_box").click(function(){
-				$("#exampleModalLabel").text("Teknis");
+				$("#exampleModalLabel").text("Teknis & Monitoring Kerja");
 				$("#submenu_container").html('');
 				
 			  	for (var i = 0; i <= teknis_dict.length-1; i++) {
