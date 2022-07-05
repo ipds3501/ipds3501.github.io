@@ -439,78 +439,42 @@
 				}
 			}
 
-			/*---   CAROUSEL   ---*/
-			.dropping-texts {
-				display: inline-block;
-				width: 180px;
-				text-align: left;
-				height: 36px;
-				vertical-align: -2px;
-				font-size: 25px;
-			}
-
-			.dropping-texts > div {
-				font-size:0px;
-				opacity:0;
-				margin-left:-30px;
-				position:absolute;
-				font-weight:30;   
-				box-shadow: 0px 60px 25px -20px rgba(0,0,0,0.5);
-			}
-
-			.dropping-texts > div:nth-child(1) {
-				animation: roll 5s linear infinite 0s;
-			}
-			.dropping-texts > div:nth-child(2) {
-				animation: roll 5s linear infinite 1s;
-			}
-			.dropping-texts > div:nth-child(3) {
-				animation: roll 5s linear infinite 2s;
-			}
-
-
-			@keyframes roll {
-				0% {
-					font-size:0px;
-					opacity:0;
-					margin-left:-30px;
-					margin-top:0px;
-					transform: rotate(-25deg);
-				}
-				3% {
-					opacity:1;
-					transform: rotate(0deg);
-				}
-				5% {
-					font-size:inherit;
-					opacity:1;
-					margin-left:0px;
-					margin-top:0px;
-				}
-				20% {
-					font-size:inherit;
-					opacity:1;
-					margin-left:0px;
-					margin-top:0px;
-					transform: rotate(0deg);
-				}
-				27% {
-					font-size:0px;
-					opacity:0.5;
-					margin-left:20px;
-					margin-top:100px;
-				}
-				100% {
-					font-size:0px;
-					opacity:0;
-					margin-left:-30px;
-					margin-top:0px;
-					transform: rotate(15deg);
-				}
-			}
-
+			/*---   TYPEWRITER   ---*/
 			
-			
+			.containertypewritter {
+			    align-items: center;
+			    box-sizing: border-box;
+			    background: var(--bg-color);
+			}
+
+			.typewriter {
+			    font-family: Arial, Helvetica, sans-serif;
+			    font-size: 16px;
+			    color: #fff;
+			    font-weight: bold;
+			    position: relative;
+			    margin: 0;
+			    transform: translateY(-50%);
+			}
+
+			.typewriter span {
+			    color: var(--text-color);
+			    padding: 10px;
+			    border-right: solid var(--text-color) 10px; 
+			    animation: cursor 1s ease-in-out infinite;
+			}
+
+			@keyframes cursor {
+			    from { border-color: var(--text-color); }
+			    to { border-color: transparent; }
+			}
+
+			@media (max-width: 576px) {
+			    .typewriter { font-size: 24px; }
+			}
+			@media (max-width: 768px) {
+			    .typewriter { font-size: 36px; }
+			}
 		</style>
 
 
@@ -528,11 +492,11 @@
 						<span class="fw-light">
 							<span class="animate-character fantasy">Sij1-AE</span>
 						</span>
-							<div class="dropping-texts">
-								<div class="text-primary">Profesional</div>
-								<div class="text-success">Integritas</div>
-								<div class="text-warning">Amanah</div>
-							</div>
+						<div class="containertypewritter">
+						  	<p class="typewriter text-secondary">
+						    	<span data-text="BPS 3501, Profesional, Integritas, Amanah"></span>
+						  	</p>
+						</div>
 						<p class=" text-muted">
 							Siji-AE merupakan Sistem Informasi yang berisi kumpulan sistem informasi dan aplikasi yang digunakan oleh BPS Kabupaten Pacitan untuk mempermudah dalam melakukan tugas dan tanggung jawab sebagai "Penyedia Data Statistik Berkualitas untuk Indonesia Maju".
 						</p>
@@ -733,7 +697,68 @@
 
 
 		<script type="text/javascript">
-			
+			var span = document.querySelector(".typewriter span");
+			var textArr = span.getAttribute("data-text").split(", "); 
+			var maxTextIndex = textArr.length; 
+
+			var sPerChar = 0.10; 
+			var sBetweenWord = 1.0;
+			var textIndex = 0; 
+
+			typing(textIndex, textArr[textIndex]); 
+
+			function typing(textIndex, text) {
+			    var charIndex = 0; 
+			    var maxCharIndex = text.length - 1; 
+			    
+			    var typeInterval = setInterval(function () {
+			        span.innerHTML += text[charIndex]; 
+			        if(text=="Profesional"){
+			        	span.classList.remove("text-info");
+			        	span.classList.remove("text-success");
+			        	span.classList.remove("text-warning");
+			        	span.classList.add("text-info");	
+			        }else if(text=="Integritas"){
+			        	span.classList.remove("text-info");
+			        	span.classList.remove("text-success");
+			        	span.classList.remove("text-warning");
+			        	span.classList.add("text-success");	
+			        }else if(text=="Amanah"){
+			        	span.classList.remove("text-info");
+			        	span.classList.remove("text-success");
+			        	span.classList.remove("text-warning");
+			        	span.classList.add("text-warning");	
+			        }
+			        
+			        if (charIndex == maxCharIndex) {
+			            clearInterval(typeInterval);
+			            setTimeout(function() { deleting(textIndex, text) }, sBetweenWord * 1000); 
+			            
+			        } else {
+			            charIndex += 1; 
+			        }
+			    }, sPerChar * 1000); 
+			}
+
+			function deleting(textIndex, text) {
+			    var minCharIndex = 0; 
+			    var charIndex = text.length - 1; 
+
+			    var typeInterval = setInterval(function () {
+			        span.innerHTML = text.substr(0, charIndex); 
+		        	span.classList.remove("text-warning");
+			        if (charIndex == minCharIndex) {
+			            clearInterval(typeInterval);
+			            textIndex + 1 == maxTextIndex ? textIndex = 0 : textIndex += 1; 
+			            setTimeout(function() { typing(textIndex, textArr[textIndex]) }, sBetweenWord * 1000); 
+			        } else {
+			            charIndex -= 1; 
+			        }
+			    }, sPerChar * 1000); 
+			}
+
+
+
 
 			function getRandomInt(min, max) {
 			    min = Math.ceil(min);
