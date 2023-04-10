@@ -30,4 +30,14 @@ kehumasan_json = [
 			  	url: "https://drive.google.com/drive/folders/1MxN05RSVyMRsd4jbfaApdMM87zz3VSRb?usp=sharing"
 			}
 
+			//salin di bawah baris spasi ini 
+
 			];
+
+// Untuk menambahkan tautan, salin kode berikut, hapus 2 garis miring dan tempelkan dibaris paling bawah dari kode diatas
+			// ,{
+			// 	nama: "nama aplikasi",
+			// 	desc: "deskripsi aplikasi",
+			// 	ikon: "ikon aplikasi",
+			//  url: "tautan aplikasi"
+			// }

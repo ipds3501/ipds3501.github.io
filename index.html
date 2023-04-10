@@ -6,7 +6,7 @@
 		<meta name="description" content="">
 		<meta name="author" content="Mark Otto, Jacob Thornton, and Bootstrap contributors">
 		<meta name="generator" content="Hugo 0.98.0">
-		<title>Siji-AE ~ Portal Satu Tautan BPS Kabupaten Pacitan</title>
+		<title>Siji-AE ~ Portal Satu Tautan BPS Kabupaten pacitan	</title>
 		<link rel="icon" type="image/x-icon" href="favicon.ico">
 		<link rel="canonical" href="https://getbootstrap.com/docs/5.2/examples/album/">
 		<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous">
@@ -684,7 +684,9 @@
 						</div>
 					</div>
 					<div class="modal-footer">
+						<a href="#" target="_blank" class="btn btn-info" id="add_btn"  role="button">Tambah Tautan</a>
 						<button type="button" class="btn btn-secondary" data-bs-dismiss="modal" id="closemodal">Close</button>
+
 					</div>
 				</div>
 			</div>
@@ -787,7 +789,7 @@
 			$("#administrasi_box").click(function(){
 				$("#exampleModalLabel").text("Administrasi");
 				$("#submenu_container").html('');
-				
+				$("#add_btn").attr("href", "https://github.com/ipds3501/ipds3501.github.io/blob/master/administrasi.js");
 			  	for (var i = 0; i <= administrasi_dict.length-1; i++) {
 			  		var judul = '';
 					if (administrasi_dict[i].nama == '') {
@@ -812,7 +814,8 @@
 			$("#teknis_box").click(function(){
 				$("#exampleModalLabel").text("Teknis & Monitoring Kerja");
 				$("#submenu_container").html('');
-				
+				$("#add_btn").attr("href", "https://github.com/ipds3501/ipds3501.github.io/blob/master/teknis.js");
+
 			  	for (var i = 0; i <= teknis_dict.length-1; i++) {
 			  		console.log(teknis_dict.length);	
 			  		var judul = '';
@@ -836,7 +839,8 @@
 			$("#sdm_box").click(function(){
 				$("#exampleModalLabel").text("Sumber Daya Manusia");
 				$("#submenu_container").html('');
-				
+				$("#add_btn").attr("href", "https://github.com/ipds3501/ipds3501.github.io/blob/master/sdm.js");
+
 			  	for (var i = 0; i <= sdm_dict.length-1; i++) {
 			  		console.log(sdm_dict.length);	
 			  		var judul = '';
@@ -861,6 +865,8 @@
 			$("#kehumasan_box").click(function(){
 				$("#exampleModalLabel").text("Kehumasan");
 				$("#submenu_container").html('');
+				$("#add_btn").attr("href", "https://github.com/ipds3501/ipds3501.github.io/blob/master/kehumasan.js");
+
 			  	for (var i = 0; i <= kehumasan_dict.length-1; i++) {
 			  		var judul = '';
 					if (kehumasan_dict[i].nama == '') {
@@ -885,6 +891,8 @@
 			$("#pelayanan_box").click(function(){
 				$("#exampleModalLabel").text("Pelayanan");
 				$("#submenu_container").html('');
+				$("#add_btn").attr("href", "https://github.com/ipds3501/ipds3501.github.io/blob/master/pelayanan.js");
+
 			  	for (var i = 0; i <= pelayanan_dict.length-1; i++) {
 			  		var judul = '';
 					if (pelayanan_dict[i].nama == '') {

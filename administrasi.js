@@ -72,4 +72,14 @@ administrasi_json = [
 			  	"url": "https://s.bps.go.id/survei_kepuasaan_pelaksanaanpelatihan_bps3501"
 			}
 			
-];
+			//salin di bawah baris spasi ini 
+
+			];
+
+// Untuk menambahkan tautan, salin kode berikut, hapus 2 garis miring dan tempelkan dibaris paling bawah dari kode diatas
+			// ,{
+			// 	nama: "nama aplikasi",
+			// 	desc: "deskripsi aplikasi",
+			// 	ikon: "ikon aplikasi",
+			//  url: "tautan aplikasi"
+			// }

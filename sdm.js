@@ -53,4 +53,14 @@ sdm_json = [
 			  	ikon: "https://play-lh.googleusercontent.com/kO9-o2mzy3LktKjr-viMCL55y3yDk3bWNHZivkfmSkU57Bh3GTYPf39Aj3rzV6V4r6E",
 			  	url: "https://mitra.bps.go.id/"
 			}
+			//salin di bawah baris spasi ini 
+
 			];
+
+// Untuk menambahkan tautan, salin kode berikut, hapus 2 garis miring dan tempelkan dibaris paling bawah dari kode diatas
+			// ,{
+			// 	nama: "nama aplikasi",
+			// 	desc: "deskripsi aplikasi",
+			// 	ikon: "ikon aplikasi",
+			//  url: "tautan aplikasi"
+			// }
