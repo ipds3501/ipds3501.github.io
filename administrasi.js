@@ -18,7 +18,7 @@ administrasi_json = [
 			  	"url": "https://e-monev.bappenas.go.id/"
 			},
 			{
-				"nama": "SPIii",
+				"nama": "SPI",
 				"desc": "Sistem Pengendalian Internal.",
 				"ikon": "https://esphome.io/_images/spi.png",
 			  	"url": "https://spi.bps.go.id/v2"
