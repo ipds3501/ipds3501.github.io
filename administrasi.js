@@ -70,6 +70,12 @@ administrasi_json = [
 				"desc": "Survei Penilaian Kepuasan Pelaksanaan Kegiatan BPS Kabupaten Pacitan",
 				"ikon": "https://i.imgur.com/By07doA.png",
 			  	"url": "https://s.bps.go.id/survei_kepuasaan_pelaksanaanpelatihan_bps3501"
+			},
+			{
+				"nama": "Nomor Surat Online Bagian Umum",
+				"desc": "Nomor Surat Online Bagian Umum otomatis",
+				"ikon": "https://i.imgur.com/9F7fgLd.png",
+			  	"url": "http://s.bps.go.id/nosurat_otomatis_umumbps3501"
 			}
 			
 			//salin di bawah baris spasi ini 
