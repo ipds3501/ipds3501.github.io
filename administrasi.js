@@ -76,6 +76,12 @@ administrasi_json = [
 				"desc": "Nomor Surat Online Bagian Umum otomatis",
 				"ikon": "https://i.imgur.com/9F7fgLd.png",
 			  	"url": "http://s.bps.go.id/nosurat_otomatis_umumbps3501"
+			},
+			{
+				"nama": "KipApp",
+				"desc": "Pengelolaan Kinerja ASN di lingkungan Badan Pusat Statistik",
+				"ikon": "https://drive.google.com/uc?id=1voMPftDUNeBUlDtrvepSx8DxFHazbp5b&export=download",
+			  	"url": "https://webapps.bps.go.id/kipapp/"
 			}
 			
 			//salin di bawah baris spasi ini 
