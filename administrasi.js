@@ -80,7 +80,7 @@ administrasi_json = [
 			{
 				"nama": "KipApp",
 				"desc": "Pengelolaan Kinerja ASN di lingkungan Badan Pusat Statistik",
-				"ikon": "https://drive.google.com/uc?id=1voMPftDUNeBUlDtrvepSx8DxFHazbp5b&export=download",
+				"ikon": "https://i.imgur.com/ejJW209.png",
 			  	"url": "https://webapps.bps.go.id/kipapp/"
 			}
 			
