@@ -86,7 +86,7 @@ administrasi_json = [
 			{
 				"nama": "SiMistik",
 				"desc": "Sistem Informasi Mitra Statistik",
-				"ikon": "https://i.imgur.com/LKjmjn4.png",
+				"ikon": "https://i.imgur.com/g7Rb3d1.png",
 			  	"url": "https://sites.google.com/view/simistik/beranda"
 			}
 			
