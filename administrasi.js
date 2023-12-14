@@ -82,7 +82,14 @@ administrasi_json = [
 				"desc": "Pengelolaan Kinerja ASN di lingkungan Badan Pusat Statistik",
 				"ikon": "https://i.imgur.com/ejJW209.png",
 			  	"url": "https://webapps.bps.go.id/kipapp/"
+			},
+			{
+				"nama": "SiMistik",
+				"desc": "Sistem Informasi Mitra Statistik",
+				"ikon": "https://i.imgur.com/Xw8UY6z.png",
+			  	"url": "https://sites.google.com/view/simistik/beranda"
 			}
+			
 			
 			//salin di bawah baris spasi ini 
 
