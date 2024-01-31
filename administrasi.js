@@ -88,6 +88,12 @@ administrasi_json = [
 				"desc": "Sistem Informasi Mitra Statistik",
 				"ikon": "https://i.imgur.com/g7Rb3d1.png",
 			  	"url": "https://sites.google.com/view/simistik/beranda"
+			},
+			{
+				"nama": "KAKAK",
+				"desc": "Kumpulan Arsip KAK",
+				"ikon": "https://i.imgur.com/IUlHGD1.png",
+			  	"url": "https://drive.google.com/drive/folders/1B9vkmHETsPL4xnDU6RVbakpfTwbgW8eY?usp=sharing"
 			}
 			
 			
