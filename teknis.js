@@ -64,6 +64,12 @@ teknis_json = [
 				desc: "Sistem Monitoring Kerangka Sampel Area Padi.",
 				ikon: "https://i.imgur.com/K5IOJKZ.png",
 			  	url: "https://ksapro-manajemen.bps.go.id"
+			},
+			{
+				nama: "SNAPER 3501",
+				desc: "Snapshot Perekonomian Regional (SNAPER)",
+				ikon: "https://i.imgur.com/fj8wTSX.png",
+			  	url: "https://docs.google.com/spreadsheets/d/1V8Initw8C6QkvE0N76zKoTurCwKGWQdJ/edit#gid=2019944723"
 			}
 			//salin di bawah baris spasi ini 
 
