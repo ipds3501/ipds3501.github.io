@@ -94,6 +94,12 @@ administrasi_json = [
 				"desc": "Kumpulan Arsip KAK",
 				"ikon": "https://i.imgur.com/IUlHGD1.png",
 			  	"url": "https://drive.google.com/drive/folders/1B9vkmHETsPL4xnDU6RVbakpfTwbgW8eY?usp=sharing"
+			},
+			{
+				"nama": "RPD",
+				"desc": "Rencana Penarikan Dana",
+				"ikon": "https://i.imgur.com/O3iJVXV.png",
+			  	"url": "https://docs.google.com/spreadsheets/d/1TWiiNQjvXOz-Ew6tF0YZXCyeybqSD099/edit#gid=1721401004"
 			}
 			
 			
