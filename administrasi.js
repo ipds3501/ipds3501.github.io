@@ -99,7 +99,7 @@ administrasi_json = [
 				"nama": "RPD",
 				"desc": "Rencana Penarikan Dana",
 				"ikon": "https://i.imgur.com/O3iJVXV.png",
-			  	"url": "https://docs.google.com/spreadsheets/d/1TWiiNQjvXOz-Ew6tF0YZXCyeybqSD099/edit#gid=1721401004"
+			  	"url": "https://docs.google.com/spreadsheets/d/1ELzc_ZL_VsRskscCG5abKCr0ttwNiyvK9G9TLmodiGM/edit?usp=sharing"
 			}
 			
 			
