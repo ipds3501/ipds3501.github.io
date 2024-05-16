@@ -28,7 +28,14 @@ pelayanan_json = [
 				desc: "Layanan untuk menampung aspirasi dan keluhan dari masyarakat secara online.",
 				ikon: "https://i.imgur.com/acG7P0U.jpg",
 				url: "https://forms.gle/HXFTusi9xBC3f2DT7"
-			}
+			},
+			{
+				nama: "Survey Kepuasan Layanan PST",
+				desc: "Sahabatdata, bantu kesediaannya untuk mengisi Survey Kepuasan Layanan kami",
+				ikon: "https://i.imgur.com/Y9XgGOO.jpeg",
+				url: "https://ipds3501.aidaform.com/survei-kepuasan-layanan-pst-bps-kabupaten-pacitan"
+			},
+	
 			//salin di bawah baris spasi ini 
 
 			];
