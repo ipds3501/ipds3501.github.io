@@ -28,6 +28,12 @@ kehumasan_json = [
 			  	desc: "Publikasi dan Dokumentasi kegiatan BPS Kabupaten Pacitan",
 			  	ikon: "https://w7.pngwing.com/pngs/349/554/png-transparent-technical-documentation-computer-icons-technology-paper-contract-electronics-logo-essay.png",
 			  	url: "https://drive.google.com/drive/folders/1MxN05RSVyMRsd4jbfaApdMM87zz3VSRb?usp=sharing"
+			},
+			{
+			  	nama: "Beban Kerja Humas",
+			  	desc: "Jadwal Pembagian Tim Humas BPS Kabupaten Pacitan",
+			  	ikon: "https://drive.google.com/file/d/17FP390pYopj9nbB8_6-9vaBy-nuSz3QP/view?usp=sharing,
+			  	url: "https://taplink.cc/jadwaltugashumas_bps3501"
 			}
 
 			//salin di bawah baris spasi ini 
