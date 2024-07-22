@@ -32,7 +32,7 @@ kehumasan_json = [
 			{
 			  	nama: "Beban Kerja Humas",
 			  	desc: "Jadwal Pembagian Tim Humas BPS Kabupaten Pacitan",
-			  	ikon: "https://i.ibb.co.com/fqhMXyM/LOGO-HUMAS.png",
+			  	ikon: "https://i.ibb.co.com/w41QXGg/LOGO-HUMAS.png",
 			  	url: "https://taplink.cc/jadwaltugashumas_bps3501"
 			}
 
