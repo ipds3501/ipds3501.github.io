@@ -100,6 +100,12 @@ administrasi_json = [
 				"desc": "Rencana Penarikan Dana",
 				"ikon": "https://i.imgur.com/O3iJVXV.png",
 			  	"url": "https://docs.google.com/spreadsheets/d/1ELzc_ZL_VsRskscCG5abKCr0ttwNiyvK9G9TLmodiGM/edit?usp=sharing"
+			},
+			{
+				"nama": "BOS",
+				"desc": "Back Office Selindo",
+				"ikon": "https://backoffice.bps.go.id/c9086a7aad4cf0aa0c7caa546f83be5e.png",
+			  	"url": "https://backoffice.bps.go.id"
 			}
 			
 			
