@@ -112,7 +112,7 @@ administrasi_json = [
 				"desc":	"Berisikan folder Zona Integritas BPS Kabupaten Pacitan",
 				"ikon":	"https://drive.google.com/file/d/13NoMxCgWYZQv6VpOLZIaew8-dv7vRE_q/view?usp=sharing",
 				"url":	"https://drive.google.com/drive/folders/16GqWWkT1wozuAh_dNlzhGeXzE8uHQXLv"
-			},
+			}
 			
 			//salin di bawah baris spasi ini 
 
