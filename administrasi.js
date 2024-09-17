@@ -106,8 +106,13 @@ administrasi_json = [
 				"desc": "Back Office Selindo",
 				"ikon": "https://backoffice.bps.go.id/c9086a7aad4cf0aa0c7caa546f83be5e.png",
 			  	"url": "https://backoffice.bps.go.id"
+			},
+			{
+				"nama":	"ZI BPS Kabupaten Pacitan",
+				"desc":	"Berisikan folder Zona Integritas BPS Kabupaten Pacitan",
+				"ikon":	"https://drive.google.com/file/d/13NoMxCgWYZQv6VpOLZIaew8-dv7vRE_q/view?usp=sharing",
+				"url":	"https://drive.google.com/drive/folders/16GqWWkT1wozuAh_dNlzhGeXzE8uHQXLv"
 			}
-			
 			
 			//salin di bawah baris spasi ini 
 
