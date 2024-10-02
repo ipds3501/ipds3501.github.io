@@ -50,7 +50,7 @@ teknis_json = [
 			{
 				nama: "Quality Gate BPS",
 				desc: "Quality Gate Kegiatan Lapangan di BPS.",
-				ikon: "https://drive.google.com/file/d/1oni_k-TM1tMcm2DWBoGIIDSLsQck-Fde/view?usp=sharing",
+				ikon: "https://drive.google.com/file/d/1oni_k-TM1tMcm2DWBoGIIDSLsQck-Fde/view?usp=sharing.jpg",
 			  	url: "https://webapps.bps.go.id/nqaf/qgate/"
 			},
 			{
