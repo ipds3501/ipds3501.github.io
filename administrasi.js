@@ -60,7 +60,7 @@ administrasi_json = [
 			  	"url": "https://sites.google.com/view/pedoman-adm-regsosek2022/home"
 			},
 			{
-				"nama": "Nomor Kontrak 2023",
+				"nama": "Nomor Kontrak 2024",
 				"desc": "Nomor Kontrak BPS Kabupaten Pacitan",
 				"ikon": "https://i.imgur.com/avaPtXA.png",
 			  	"url": "http://s.bps.go.id/nomorpengadaan_bps3501"
