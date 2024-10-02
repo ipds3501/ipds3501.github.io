@@ -110,7 +110,7 @@ administrasi_json = [
 			{
 				"nama":	"ZI BPS Kabupaten Pacitan",
 				"desc":	"Berisikan folder Zona Integritas BPS Kabupaten Pacitan",
-				"ikon":	"https://drive.google.com/file/d/13NoMxCgWYZQv6VpOLZIaew8-dv7vRE_q/view?usp=sharing",
+				"ikon":	"https://i.ibb.co.com/XX7Y0sQ/logo-color.png",
 				"url":	"https://drive.google.com/drive/folders/16GqWWkT1wozuAh_dNlzhGeXzE8uHQXLv"
 			}
 			
