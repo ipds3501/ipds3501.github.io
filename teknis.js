@@ -48,10 +48,10 @@ teknis_json = [
 			  	url: "https://coolsis.bps.go.id/"
 			},
 			{
-				nama: "Monitoring SP2020",
-				desc: "Sistem Monitoring dan Pelaporan hasil Sensus Penduduk 2020.",
-				ikon: "https://i.imgur.com/93Tgb9p.png",
-			  	url: "http://sp2020mon.herokuapp.com/"
+				nama: "Quality Gate BPS",
+				desc: "Quality Gate Kegiatan Lapangan di BPS.",
+				ikon: "https://drive.google.com/file/d/1oni_k-TM1tMcm2DWBoGIIDSLsQck-Fde/view?usp=sharing",
+			  	url: "https://webapps.bps.go.id/nqaf/qgate"
 			},
 			{
 				nama: "KSA BPS",
