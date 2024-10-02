@@ -30,7 +30,7 @@ pelayanan_json = [
 				url: "https://forms.gle/HXFTusi9xBC3f2DT7"
 			},
 			{
-				nama:  "ROMANTIK".
+				nama:  "ROMANTIK",
 				desc:  "Layanan Bagi Instansi Pemerintah untuk Mendapatkan Rekomendasi Penyelenggaraan Kegiatan Statistik Sektoral dari BPS.",
 				ikon:  "https://imgur.com/mRP0Tsc.jpg",
 				url:  "https://romantik.web.bps.go.id/"
