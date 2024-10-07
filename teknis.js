@@ -70,6 +70,12 @@ teknis_json = [
 				desc: "Snapshot Perekonomian Regional (SNAPER)",
 				ikon: "https://i.imgur.com/fj8wTSX.png",
 			  	url: "https://docs.google.com/spreadsheets/d/1V8Initw8C6QkvE0N76zKoTurCwKGWQdJ/edit#gid=2019944723"
+			},
+			{
+				nama: "MATERI RAPAT DINAS BULANAN",
+				desc: "Materi Rapat Dinas Bulanan",
+				ikon: "https://i.ibb.co.com/4sbJRwJ/paper-2.jpg",
+			  	url: "https://drive.google.com/drive/folders/12EpQCWLRX06vvYRQLCLPM1GVnnmBzKtT?usp=sharing"
 			}
 			//salin di bawah baris spasi ini 
 
