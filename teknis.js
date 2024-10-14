@@ -72,17 +72,17 @@ teknis_json = [
 			  	url: "https://docs.google.com/spreadsheets/d/1V8Initw8C6QkvE0N76zKoTurCwKGWQdJ/edit#gid=2019944723"
 			},
 			{
+				nama: "DASHBOARD OUTLIER SEP 2024",
+				decs: "Untuk melihat outlier hasil tabulasi SEP 2024",
+				ikon: "https://i.ibb.co.com/4sbJRwJ/paper-2.jpg",
+				url: "https://dashboard.bps.go.id/reports/powerbi/SEP/SEP2024_UTP?rs:embed=true"
+			},
+			{
 				nama: "MATERI RAPAT DINAS BULANAN",
 				desc: "Materi Rapat Dinas Bulanan",
 				ikon: "https://i.ibb.co.com/4sbJRwJ/paper-2.jpg",
 			  	url: "https://drive.google.com/drive/folders/12EpQCWLRX06vvYRQLCLPM1GVnnmBzKtT?usp=sharing"
 			}.
-			{
-				nama: "DASHBOARD OUTLIER SEP 2024",
-				desc: "Untuk Melihat Outlier SEP 2024. Akses menggunakan VPN BPS",
-				ikon: "https://i.ibb.co.com/4sbJRwJ/paper-2.jpg",
-			  	url : "https://dashboard.bps.go.id/reports/powerbi/SEP/SEP2024_UTP?rs:embed=true"
-			},
 			//salin di bawah baris spasi ini 
 
 			];
