@@ -82,7 +82,7 @@ teknis_json = [
 				desc: "Materi Rapat Dinas Bulanan",
 				ikon: "https://i.ibb.co.com/4sbJRwJ/paper-2.jpg",
 			  	url: "https://drive.google.com/drive/folders/12EpQCWLRX06vvYRQLCLPM1GVnnmBzKtT?usp=sharing"
-			}.
+			}
 			//salin di bawah baris spasi ini 
 
 			];
