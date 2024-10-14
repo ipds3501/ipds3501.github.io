@@ -76,6 +76,12 @@ teknis_json = [
 				desc: "Materi Rapat Dinas Bulanan",
 				ikon: "https://i.ibb.co.com/4sbJRwJ/paper-2.jpg",
 			  	url: "https://drive.google.com/drive/folders/12EpQCWLRX06vvYRQLCLPM1GVnnmBzKtT?usp=sharing"
+			}.
+			{
+				nama: "DASHBOARD OUTLIER SEP 2024",
+				desc: "Untuk Melihat Outlier SEP 2024. Akses menggunakan VPN BPS",
+				ikon: "https://i.ibb.co.com/4sbJRwJ/paper-2.jpg",
+			  	url: "https://dashboard.bps.go.id/reports/powerbi/SEP/SEP2024_UTP?rs:embed=true"
 			}
 			//salin di bawah baris spasi ini 
 
