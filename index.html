@@ -655,7 +655,8 @@
 							</a>
 						</div>
 
-						
+						<a href="#" class="btn btn-danger btn-lg logout-button" role="button" id="logoutButton">Logout</a>
+
 
 						
 
@@ -683,6 +684,7 @@
 						    </div>
 						</div>
 					</div>
+					
 					<div class="modal-footer">
 						<a href="#" target="_blank" class="btn btn-info" id="add_btn"  role="button">Tambah Tautan</a>
 						<button type="button" class="btn btn-secondary" data-bs-dismiss="modal" id="closemodal">Close</button>
@@ -705,6 +707,24 @@
 		<script type="text/javascript" src="pelayanan.js"></script>
 
 		<script type="text/javascript">
+		
+			// Check if the user is logged in
+			if (localStorage.getItem('isLoggedIn') !== 'true') {
+				// If not logged in, redirect to the login page
+				window.location.href = 'login.html';
+			} else {
+				// If logged in, show the content
+				document.body.style.display = 'block';
+			}
+
+			// Logout functionality
+			document.getElementById('logoutButton').addEventListener('click', function() {
+				// Clear login state and redirect to login page
+				localStorage.removeItem('isLoggedIn');
+				window.location.href = 'login.html';
+			});
+		
+		
 			var span = document.querySelector(".typewriter span");
 			var textArr = span.getAttribute("data-text").split(", "); 
 			var maxTextIndex = textArr.length; 
