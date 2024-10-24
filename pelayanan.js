@@ -34,7 +34,13 @@ pelayanan_json = [
 				desc:  "Layanan Bagi Instansi Pemerintah untuk Mendapatkan Rekomendasi Penyelenggaraan Kegiatan Statistik Sektoral dari BPS.",
 				ikon:  "https://imgur.com/mRP0Tsc.jpg",
 				url:  "https://romantik.web.bps.go.id/"
-			},	
+			},
+			{
+				nama: "Gratifikasi Online KPK (GOL)",
+				desc: "Laporkan Gratifikasi ke KPK",
+				ikon: "https://www.kpk.go.id/icon.png",
+				url: "https://gol.kpk.go.id/login/"
+			},
 			{
 				nama: "Survey Kepuasan Layanan PST",
 				desc: "Sahabatdata, bantu kesediaannya untuk mengisi Survey Kepuasan Layanan kami",
