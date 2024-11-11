@@ -80,7 +80,7 @@ teknis_json = [
 			{
 				nama: "PDRB KABUPATEN PACITAN",
 				decs: "Untuk melakukan entri data terkait PDRB Kabupaten Pacitan oleh Dinas Terkait",
-				ikon: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQHiHZ-KH8HiYgnqiEyeYUZwvkn1Swc_xpwzaNWCmSE97J1PoBREshUs1OtZsg6e3Hf97A&usqp=CAU",
+				ikon: "https://i0.wp.com/studiekonomi.com/wp-content/uploads/2020/07/PDB-PDRB-dan-Pertumbuhan-Ekonomi.png",
 				url: "https://sites.google.com/view/pdrb-kabupaten-pacitan/beranda"
 			},
 			{
