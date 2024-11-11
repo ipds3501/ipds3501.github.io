@@ -73,9 +73,15 @@ teknis_json = [
 			},
 			{
 				nama: "DASHBOARD OUTLIER SEP 2024",
-				decs: "Untuk melihat outlier hasil tabulasi SEP 2024",
+				decs: "Kumpulan Link PDRB Kabupaten Pacitan",
 				ikon: "https://i.ibb.co.com/4sbJRwJ/paper-2.jpg",
 				url: "https://dashboard.bps.go.id/reports/powerbi/SEP/SEP2024_UTP?rs:embed=true"
+			},
+			{
+				nama: "PDRB KABUPATEN PACITAN",
+				decs: "Untuk melakukan entri data terkait PDRB Kabupaten Pacitan oleh Dinas Terkait",
+				ikon: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQHiHZ-KH8HiYgnqiEyeYUZwvkn1Swc_xpwzaNWCmSE97J1PoBREshUs1OtZsg6e3Hf97A&usqp=CAU",
+				url: "https://sites.google.com/view/pdrb-kabupaten-pacitan/beranda"
 			},
 			{
 				nama: "MATERI RAPAT DINAS BULANAN",
