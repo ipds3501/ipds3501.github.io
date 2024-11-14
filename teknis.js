@@ -60,6 +60,11 @@ teknis_json = [
 			  	url: "https://ksa.bps.go.id/"
 			},
 			{
+				nama: "PEMBINAAN STATISTIK SEKTORAL",
+				desc: "PSS, EPSS dan TPB.",
+				ikon: "https://wajokab.go.id/asset/images/img/sektoral.png",
+			  	url: "https://sites.google.com/view/pss3501/beranda"
+			{
 				nama: "KSA Pro",
 				desc: "Sistem Monitoring Kerangka Sampel Area Padi.",
 				ikon: "https://i.imgur.com/K5IOJKZ.png",
@@ -85,7 +90,7 @@ teknis_json = [
 			},
 			{
 				nama: "MATERI RAPAT DINAS BULANAN",
-				desc: "Materi Rapat Dinas Bulanan",
+				desc: "Materi Rapat Dinas Bulanan.",
 				ikon: "https://i.ibb.co.com/4sbJRwJ/paper-2.jpg",
 			  	url: "https://drive.google.com/drive/folders/12EpQCWLRX06vvYRQLCLPM1GVnnmBzKtT?usp=sharing"
 			}
