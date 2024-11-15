@@ -64,6 +64,7 @@ teknis_json = [
 				desc: "PSS, EPSS dan TPB.",
 				ikon: "https://wajokab.go.id/asset/images/img/sektoral.png",
 			  	url: "https://sites.google.com/view/pss3501/beranda"
+			},
 			{
 				nama: "KSA Pro",
 				desc: "Sistem Monitoring Kerangka Sampel Area Padi.",
