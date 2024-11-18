@@ -79,13 +79,13 @@ teknis_json = [
 			},
 			{
 				nama: "DASHBOARD OUTLIER SEP 2024",
-				decs: "Kumpulan Link PDRB Kabupaten Pacitan",
+				desc: "Kumpulan Link PDRB Kabupaten Pacitan",
 				ikon: "https://i.ibb.co.com/4sbJRwJ/paper-2.jpg",
 				url: "https://dashboard.bps.go.id/reports/powerbi/SEP/SEP2024_UTP?rs:embed=true"
 			},
 			{
 				nama: "PDRB KABUPATEN PACITAN",
-				decs: "Untuk melakukan entri data terkait PDRB Kabupaten Pacitan oleh Dinas Terkait",
+				desc: "Untuk melakukan entri data terkait PDRB Kabupaten Pacitan oleh Dinas Terkait",
 				ikon: "https://i0.wp.com/studiekonomi.com/wp-content/uploads/2020/07/PDB-PDRB-dan-Pertumbuhan-Ekonomi.png",
 				url: "https://sites.google.com/view/pdrb-kabupaten-pacitan/beranda"
 			},
