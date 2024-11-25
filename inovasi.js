@@ -30,6 +30,36 @@ inovasi_json = [
 			  	url: "https://drive.google.com/drive/folders/1JN3cxPQ8Dconq3qI1brH6cKEbl2_q0Oq?usp=sharing"
 			},
 			{
+			  	nama: "RMROP",
+			  	desc: "Right Man On The Right Place",
+			  	ikon: "https://i.imgur.com/6ZPnkXy.png",
+			  	url: "https://drive.google.com/drive/folders/1Td48ButaV9p0NYbixPwGY-dYwjbG1kLj?usp=sharing"
+			},
+			{
+			  	nama: "DEN BEI PACITAN",
+			  	desc: "Upgrade Nilai SPBE melalui Optimalisasi SDI di Kabupaten Pacitan",
+			  	ikon: "https://i.imgur.com/4UDSvEI.png",
+			  	url: "https://drive.google.com/drive/folders/11kQrsc2lhefYw8bTHTSdBzd3xkQgtU0a?usp=sharing"
+			},
+			{
+			  	nama: "SIMLO",
+			  	desc: "Sistem Informasi Kepegawaian Lokal",
+			  	ikon: "https://i.imgur.com/UckaZzG.png",
+			  	url: "https://drive.google.com/drive/folders/1Td48ButaV9p0NYbixPwGY-dYwjbG1kLj?usp=sharing"
+			},
+			{
+			  	nama: "JUMBARA",
+			  	desc: "Jumat Bersih dan Olahraga",
+			  	ikon: "https://i.imgur.com/ioWaA63.png",
+			  	url: "https://drive.google.com/drive/folders/1S_OHvt2XRvvlbwZ6NaScBQzQcx7CtqSi?usp=sharing"
+			},
+			{
+			  	nama: "KOKI SDAP",
+			  	desc: "Komitmen dan Kolaborasi untuk Satu Data Pacitan. Turunan dari Den Bei Pacitan.",
+			  	ikon: "https://i.imgur.com/AB1aUUW.png",
+			  	url: "https://drive.google.com/drive/folders/1kNzRT7dk7yjLC0vnw1_e0Pl3Af9OtXzu?usp=sharing"
+			},
+			{
 				nama: "LaporKang",
 				desc: "Layanan untuk menampung aspirasi dan keluhan dari masyarakat secara online.",
 				ikon: "https://i.imgur.com/acG7P0U.jpg",
