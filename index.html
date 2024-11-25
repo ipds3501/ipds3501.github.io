@@ -692,6 +692,33 @@
 							</a>
 						</div>
 
+						<div class="col">
+							<a id="mr_box"href="#" data-bs-toggle="modal" data-bs-target="#exampleModal1" class="">
+								<div class="card shadow-sm col6 text-center">
+
+									<div class="d-flex justify-content-between mb-1 bg-white" >
+										<div class="d-flex flex-row align-items-center" >
+											<div class="icon m-1 text6	" > <i class='fas fa-phone-square'></i> </div>
+											<div class="ms-2 c-details">
+												<h5 class="mb-0 fantasy text6">ManajemenResiko</h5>
+											</div>
+										</div>
+										<div class="badge d-flex flex-row align-items-center"> <span class="badge6">6 item</span> </div>
+									</div>
+									
+									<div class="card-body p-2">
+										<div class="overlay"></div>
+										<div class="circle">
+											<div class="logoapp">
+												<img class="img-fluid h-70 w-70 pb-3" src="https://i.imgur.com/VL1sYLQ.png" alt="Girl in a jacket">
+											</div>
+										</div>
+									</div>
+
+								</div>
+							</a>
+						</div>
+
 						<a href="#" class="btn btn-danger btn-lg logout-button" role="button" id="logoutButton">Logout</a>
 
 
@@ -743,6 +770,7 @@
 		<script type="text/javascript" src="kehumasan.js"></script>
 		<script type="text/javascript" src="pelayanan.js"></script>
 		<script type="text/javascript" src="inovasi.js"></script>
+		<script type="text/javascript" src="mr.js"></script>
 
 		<script type="text/javascript">
 		
@@ -838,6 +866,7 @@
 			var kehumasan_dict = kehumasan_json;
 			var pelayanan_dict = pelayanan_json;
 			var inovasi_dict = inovasi_json;
+			var mr_dict = mr_json;
 
 			$(".badge1").text(administrasi_dict.length+" item");
 			$(".badge2").text(teknis_dict.length+" item");
@@ -845,6 +874,7 @@
 			$(".badge4").text(kehumasan_dict.length+" item");
 			$(".badge5").text(pelayanan_dict.length+" item");
 			$(".badge6").text(inovasi_dict.length+" item");
+			$(".badge7").text(mr_dict.length+" item");
 
 			$("#administrasi_box").click(function(){
 				$("#exampleModalLabel").text("Administrasi");
@@ -994,6 +1024,33 @@
 						                '<div class="our-services border border-secondary '+box_color[getRandomInt(0,box_color.length-1)]+'" style="min-height:150px">'+
 						                    '<div class="iconm bg-light w-75 d-flex align-items-center justify-content-center" style="min-height:50px"> <img id="icon_apl" src="'+inovasi_dict[i].ikon+'" class="oversize p-1"> </div>'+
 						                    '<p class="fw-light mt-2" id="desc_apl" style="font-size: 16px;"><strong class="h6">'+judul+'</strong>'+inovasi_dict[i].desc+'</p>'+
+						                '</div>'+
+						            '</div>'+
+						        '</a>');
+			  	}
+			  		
+			});
+
+
+			$("#mr_box").click(function(){
+				$("#exampleModalLabel").text("ManajemenResiko");
+				$("#submenu_container").html('');
+				$("#add_btn").attr("href", "https://github.com/ipds3501/ipds3501.github.io/blob/master/inovasi.js");
+
+			  	for (var i = 0; i <= mr_dict.length-1; i++) {
+			  		var judul = '';
+					if (mr_dict[i].nama == '') {
+						judul = '';
+					} else {
+						judul = mr_dict[i].nama+', ';
+					}
+			  		console.log(mr_dict.length);	
+			  		
+			  		$("#submenu_container").append('<a class="col p-0 m-0 text-dark" target="_blank" href="'+mr_dict[i].url+'">'+
+						            '<div class="box p-1">'+
+						                '<div class="our-services border border-secondary '+box_color[getRandomInt(0,box_color.length-1)]+'" style="min-height:150px">'+
+						                    '<div class="iconm bg-light w-75 d-flex align-items-center justify-content-center" style="min-height:50px"> <img id="icon_apl" src="'+mr_dict[i].ikon+'" class="oversize p-1"> </div>'+
+						                    '<p class="fw-light mt-2" id="desc_apl" style="font-size: 16px;"><strong class="h6">'+judul+'</strong>'+mr_dict[i].desc+'</p>'+
 						                '</div>'+
 						            '</div>'+
 						        '</a>');
