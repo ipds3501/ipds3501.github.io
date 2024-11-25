@@ -33,19 +33,19 @@ inovasi_json = [
 			  	nama: "RMROP",
 			  	desc: "Right Man On The Right Place",
 			  	ikon: "https://i.imgur.com/6ZPnkXy.png",
-			  	url: "https://drive.google.com/drive/folders/1Td48ButaV9p0NYbixPwGY-dYwjbG1kLj?usp=sharing"
+			  	url: "https://drive.google.com/drive/folders/1W6lfdk5Qmk5ebWeduSzIYDYyPa2cRap_?usp=sharing"
 			},
 			{
 			  	nama: "DEN BEI PACITAN",
 			  	desc: "Upgrade Nilai SPBE melalui Optimalisasi SDI di Kabupaten Pacitan",
 			  	ikon: "https://i.imgur.com/4UDSvEI.png",
-			  	url: "https://drive.google.com/drive/folders/11kQrsc2lhefYw8bTHTSdBzd3xkQgtU0a?usp=sharing"
+			  	url: "https://drive.google.com/drive/folders/1hTLyHFq0emI6qf_syFOY-A9irquckLiu?usp=sharing"
 			},
 			{
 			  	nama: "SIMLO",
 			  	desc: "Sistem Informasi Kepegawaian Lokal",
 			  	ikon: "https://i.imgur.com/UckaZzG.png",
-			  	url: "https://drive.google.com/drive/folders/1Td48ButaV9p0NYbixPwGY-dYwjbG1kLj?usp=sharing"
+			  	url: "https://drive.google.com/drive/folders/1WfaQh0HS5qFYDM5o6h6-pxtYw3ZGKYP0?usp=sharing"
 			},
 			{
 			  	nama: "JUMBARA",
@@ -57,7 +57,19 @@ inovasi_json = [
 			  	nama: "KOKI SDAP",
 			  	desc: "Komitmen dan Kolaborasi untuk Satu Data Pacitan. Turunan dari Den Bei Pacitan.",
 			  	ikon: "https://i.imgur.com/AB1aUUW.png",
-			  	url: "https://drive.google.com/drive/folders/1kNzRT7dk7yjLC0vnw1_e0Pl3Af9OtXzu?usp=sharing"
+			  	url: "https://drive.google.com/drive/folders/1onrcoqQcBpP_gAs79RvY7FvCufU6ZPZ-?usp=sharing"
+			},
+			{
+			  	nama: "INTERNALISASI BERAKHLAK DAN RB",
+			  	desc: "Internalisasi Berakhlak dan Reformasi Birokrasi.",
+			  	ikon: "https://i.imgur.com/gYqEfhv.png",
+			  	url: "https://drive.google.com/drive/folders/1K1zeq8tcFn5MoktiH5GHBzEFshZMYv4N?usp=sharing"
+			},
+			{
+			  	nama: "NO BAPER",
+			  	desc: "Not Only Words, Boss Ambil Peran.",
+			  	ikon: "https://i.imgur.com/G48vgV4.png",
+			  	url: "https://drive.google.com/drive/folders/1Uf9HFqp_YKMNGDsLovT3u1d9SoxfOzfF?usp=sharing"
 			},
 			{
 				nama: "LaporKang",
