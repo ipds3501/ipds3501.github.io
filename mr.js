@@ -1,15 +1,15 @@
 mr_json = [
 			                {
-			            	        nama: "DPace",
-			  	                  desc: "Portal data-data Pacitan dalam genggaman.",
-			  	                  ikon: "https://i.imgur.com/RAxl26w.png",
-			  	                  url: "https://dpace.herokuapp.com/"
+			            	        nama: "Kepala BPS Kabupaten Pacitan",
+			  	                desc: "Manajemen Resiko Kepala BPS Kabupaten Pacitan.",
+			  	                ikon: "https://i.imgur.com/PLYhp4h.png",
+			  	                url: "https://drive.google.com/drive/folders/1X96nchDLA9qJkNbnmK0oqelM7Ko4Oy6I?usp=sharing"
 			                },
 			                {
-			  	                  nama: "RAMUAN IMPIAN DAKU",
-			  	                  desc: "Rapat Mingguan dengan Pimpinan Bertindak Lanjut.",
-			  	                  ikon: "https://i.imgur.com/6IebV1U.png",
-			  	                  url: "https://drive.google.com/drive/folders/1Cy9LdEe60lJL-k2JsYhvHLpeaflbm6ly?usp=sharing"
+			  	                nama: "Sub Bagian Umum",
+			  	                desc: "Manajamen Resiko Kepala Sub Bagian Umum.",
+			  	                ikon: "https://i.imgur.com/3JYLvSh.png",
+			  	                url: "https://drive.google.com/drive/folders/171cbmiRS1Vp77icn5pFgred7o7kOJU4B?usp=sharing"
 			                },
   			              //salin di bawah baris spasi ini 
 
