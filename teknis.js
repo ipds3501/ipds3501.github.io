@@ -90,6 +90,12 @@ teknis_json = [
 				url: "https://sites.google.com/view/pdrb-kabupaten-pacitan/beranda"
 			},
 			{
+				nama: "Laporan Kegiatan Tim Teknis",
+				desc: "Upload Laporan Kegiatan Tim Teknis baik dalam bentuk PDF maupun word",
+				ikon: "https://drive.google.com/drive/folders/17LCPrHpgriKLowfhy6ye87QhPc0mFKmh?usp=sharing",
+				url: "https://i.imgur.com/DPilCm9.png"
+			},
+			{
 				nama: "MATERI RAPAT DINAS BULANAN",
 				desc: "Materi Rapat Dinas Bulanan.",
 				ikon: "https://i.ibb.co.com/4sbJRwJ/paper-2.jpg",
