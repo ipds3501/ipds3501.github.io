@@ -92,8 +92,8 @@ teknis_json = [
 			{
 				nama: "Laporan Kegiatan Tim Teknis",
 				desc: "Upload Laporan Kegiatan Tim Teknis baik dalam bentuk PDF maupun word",
-				ikon: "https://drive.google.com/drive/folders/17LCPrHpgriKLowfhy6ye87QhPc0mFKmh?usp=sharing",
-				url: "https://i.imgur.com/DPilCm9.png"
+				ikon: "https://i.imgur.com/DPilCm9.png",
+				url: "https://drive.google.com/drive/folders/17LCPrHpgriKLowfhy6ye87QhPc0mFKmh?usp=sharing"
 			},
 			{
 				nama: "MATERI RAPAT DINAS BULANAN",
