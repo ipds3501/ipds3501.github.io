@@ -75,7 +75,7 @@ administrasi_json = [
 				"nama": "Nomor Surat Online Bagian Umum",
 				"desc": "Nomor Surat Online Bagian Umum otomatis",
 				"ikon": "https://i.imgur.com/9F7fgLd.png",
-			  	"url": "http://s.bps.go.id/nosurat_otomatis_umumbps3501"
+			  	"url": "https://docs.google.com/spreadsheets/d/1CFdEBNi9PStHmQbntL8B0cd0ESn9eH5XhiELZyMukqA/edit?usp=sharing"
 			},
 			{
 				"nama": "KipApp",
