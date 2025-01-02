@@ -96,10 +96,15 @@ administrasi_json = [
 			  	"url": "https://drive.google.com/drive/folders/1B9vkmHETsPL4xnDU6RVbakpfTwbgW8eY?usp=sharing"
 			},
 			{
-				"nama": "RPD",
+				"nama": "RPD 2024",
 				"desc": "Rencana Penarikan Dana",
 				"ikon": "https://i.imgur.com/O3iJVXV.png",
 			  	"url": "https://docs.google.com/spreadsheets/d/1ELzc_ZL_VsRskscCG5abKCr0ttwNiyvK9G9TLmodiGM/edit?usp=sharing"
+			{
+				"nama": "RPD 2025",
+				"desc": "Rencana Penarikan Dana",
+				"ikon": "https://i.imgur.com/O3iJVXV.png",
+			  	"url": "https://docs.google.com/spreadsheets/d/1HBpMZw6QJYcJ2SLoBT8LaIK1Ogci6bzPvWuSAADHaFQ/edit?usp=sharing"
 			},
 			{
 				"nama": "BOS",
