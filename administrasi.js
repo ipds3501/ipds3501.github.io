@@ -108,6 +108,18 @@ administrasi_json = [
 			  	"url": "https://docs.google.com/spreadsheets/d/1HBpMZw6QJYcJ2SLoBT8LaIK1Ogci6bzPvWuSAADHaFQ/edit?usp=sharing"
 			},
 			{
+				"nama": "BAST Petugas Lapangan",
+				"desc": "Berita Acara Serah Terima Pekerjaan Petugas Lapangan",
+				"ikon": "https://i.imgur.com/2hgr6nd.jpeg",
+			  	"url": "https://drive.google.com/drive/folders/1Ng5di6BXVfFMzKXbenc47vAjg0N3jSrs?usp=sharing"
+			},
+			{
+				"nama": "SPK Petugas Lapangan",
+				"desc": "Kontrak Kerja Petugas Lapangan",
+				"ikon": "https://i.imgur.com/gJphdna.jpeg",
+			  	"url": "https://drive.google.com/drive/folders/1Si0wgY36oyGI8zehrJwbaBArCpAP0USQ?usp=sharing"
+			},
+			{
 				"nama": "BOS",
 				"desc": "Back Office Selindo",
 				"ikon": "https://backoffice.bps.go.id/c9086a7aad4cf0aa0c7caa546f83be5e.png",
