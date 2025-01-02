@@ -100,6 +100,7 @@ administrasi_json = [
 				"desc": "Rencana Penarikan Dana",
 				"ikon": "https://i.imgur.com/O3iJVXV.png",
 			  	"url": "https://docs.google.com/spreadsheets/d/1ELzc_ZL_VsRskscCG5abKCr0ttwNiyvK9G9TLmodiGM/edit?usp=sharing"
+			},
 			{
 				"nama": "RPD 2025",
 				"desc": "Rencana Penarikan Dana",
