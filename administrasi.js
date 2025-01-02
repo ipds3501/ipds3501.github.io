@@ -114,6 +114,12 @@ administrasi_json = [
 			  	"url": "https://backoffice.bps.go.id"
 			},
 			{
+				"nama": "File Pengadaan",
+				"desc": "Kumpulan Dokumen Pengadaan BPS Kabupaten Pacitan",
+				"ikon": "https://i.imgur.com/BDE34CI.jpeg",
+			  	"url": "https://drive.google.com/drive/folders/1lM1hNK_pORP_eNIqXCY1Lyd3bgILeV_q?usp=sharing"
+			},
+			{
 				"nama":	"ZI BPS Kabupaten Pacitan",
 				"desc":	"Berisikan folder Zona Integritas BPS Kabupaten Pacitan",
 				"ikon":	"https://i.ibb.co.com/XX7Y0sQ/logo-color.png",
