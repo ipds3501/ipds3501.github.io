@@ -63,7 +63,7 @@ const mr_json = [
     {
         nama: "Tim Statistik Sosial dan Desa Cantik",
         year: 2024,
-        url: "https://example.com/2024/2",
+        url: "https://drive.google.com/drive/folders/1tJZAWGtKKyaCg6RuGItOgdDTpDmcFxvm?usp=sharing",
         ikon: "https://i.imgur.com/pQcPTVZ.png",
         desc: "Manajemen Resiko Tim Statistik Sosial dan Desa Cantik."
     },
