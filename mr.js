@@ -43,7 +43,41 @@ const mr_json = [
     }
 ];
 
-// Export for use in index.html
-if (typeof module !== 'undefined') {
-    module.exports = mr_json;
+// Function to load filtered "Manajemen Resiko" data based on year
+function loadMRSubmenu(year) {
+    $("#submenu_container").html(''); // Clear previous submenu items
+
+    let filteredData = mr_json.filter(item => item.year === year);
+
+    filteredData.forEach(item => {
+        $("#submenu_container").append(`
+            <a class="col p-0 m-0 text-dark" target="_blank" href="${item.url}">
+                <div class="box p-1">
+                    <div class="our-services border border-secondary" style="min-height:150px">
+                        <div class="iconm bg-light w-75 d-flex align-items-center justify-content-center" style="min-height:50px">
+                            <img id="icon_apl" src="${item.ikon}" class="oversize p-1">
+                        </div>
+                        <p class="fw-light mt-2" id="desc_apl" style="font-size: 16px;">
+                            <strong class="h6">${item.nama}, </strong>${item.desc}
+                        </p>
+                    </div>
+                </div>
+            </a>
+        `);
+    });
 }
+
+// When "Manajemen Resiko" is clicked
+$("#mr_box").click(function(){
+    $("#exampleModalLabel").text("Manajemen Resiko");
+
+    // Add year selection buttons dynamically
+    $("#submenu_container").html(`
+        <div class="d-flex justify-content-center mb-3">
+            <button class="btn btn-primary m-2" onclick="loadMRSubmenu(2024)">2024</button>
+            <button class="btn btn-success m-2" onclick="loadMRSubmenu(2025)">2025</button>
+        </div>
+    `);
+
+    loadMRSubmenu(2024); // Default view: 2024
+});
