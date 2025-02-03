@@ -1,5 +1,4 @@
-mr_json = [
-let mr_json = {
+mr_json = {
     "2024": [
         {
             nama: "Kepala BPS Kabupaten Pacitan",
