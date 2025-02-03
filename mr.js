@@ -59,12 +59,6 @@ mr_json = <!DOCTYPE html>
                     desc: "Manajamen Resiko Tim Statistik Sosial dan Desa Cinta Statistik.",
                     ikon: "https://i.imgur.com/pQcPTVZ.png",
                     url: "https://drive.google.com/drive/folders/1tJZAWGtKKyaCg6RuGItOgdDTpDmcFxvm?usp=sharing"
-                },
-                {
-                    nama: "Tim Statistik Pertanian",
-                    desc: "Manajamen Resiko Tim Statistik Pertanian.",
-                    ikon: "https://i.imgur.com/JNzawxA.png",
-                    url: "https://drive.google.com/drive/folders/1eKUeLwfqp4WJ7AsPe9SYWO0VkoLRXQa5?usp=sharing"
                 }
                 // Add more items for 2025 as needed
             ]
