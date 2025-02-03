@@ -1,4 +1,5 @@
-mr_json = <!DOCTYPE html>
+mr_json = 
+<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
