@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Statistik Submenu</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+        }
+        .submenu {
+            margin: 20px 0;
+        }
+        .item {
+            margin: 10px 0;
+        }
+        img {
+            width: 50px;
+            height: 50px;
+            vertical-align: middle;
+        }
+    </style>
+</head>
+<body>
+
+    <h1>Manajemen Resiko Statistik</h1>
+    
+    <div class="submenu" id="submenu-2024">
+        <h2>Tahun 2024</h2>
+    </div>
+    
+    <div class="submenu" id="submenu-2025">
+        <h2>Tahun 2025</h2>
+    </div>
+ <script>
+        const mr_json = [
+            {
+                nama: "Kepala BPS Kabupaten Pacitan",
+                desc: "Manajemen Resiko Kepala BPS Kabupaten Pacitan.",
+                ikon: "https://i.imgur.com/PLYhp4h.png",
+                url: "https://drive.google.com/drive/folders/1X96nchDLA9qJkNbnmK0oqelM7Ko4Oy6I?usp=sharing",
+                tahun: 2024
+            },
+            {
+                nama: "Sub Bagian Umum dan SAKIP",
+                desc: "Manajamen Resiko Kepala Sub Bagian Umum dan SAKIP.",
+                ikon: "https://i.imgur.com/3JYLvSh.png",
+                url: "https://drive.google.com/drive/folders/171cbmiRS1Vp77icn5pFgred7o7kOJU4B?usp=sharing",
+                tahun: 2024
+            },
+            {
+                nama: "Tim Statistik Sosial dan Desa Cantik",
+                desc: "Manajamen Resiko Tim Statistik Sosial dan Desa Cinta Statistik.",
+                ikon: "https://i.imgur.com/pQcPTVZ.png",
+                url: "https://drive.google.com/drive/folders/1tJZAWGtKKyaCg6RuGItOgdDTpDmcFxvm?usp=sharing",
+                tahun: 2025
+            },
+            {
+                nama: "Tim Statistik Pertanian",
+                desc: "Manajamen Resiko Tim Statistik Pertanian.",
+                ikon: "https://i.imgur.com/JNzawxA.png",
+                url: "https://drive.google.com/drive/folders/1eKUeLwfqp4WJ7AsPe9SYWO0VkoLRXQa5?usp=sharing",
+                tahun: 2025
+            },
+            // Add more items as needed
+        ];
+
+        function displayItems(year) {
+            const submenu = document.getElementById(`submenu-${year}`);
+            const items = mr_json.filter(item => item.tahun === year);
+            items.forEach(item => {
+                const itemDiv = document.createElement('div');
+                itemDiv.className = 'item';
+                itemDiv.innerHTML = `
+                    <img src="${item.ikon}" alt="${item.nama}">
+                    <strong>${item.nama}</strong>: ${item.desc} 
+                    <a href="${item.url}" target="_blank">Link</a>
+                `;
+                submenu.appendChild(itemDiv);
+            });
+        }
+
+        displayItems(2024);
+        displayItems(2025);
+    </script>
+
+</body>
+</html>
