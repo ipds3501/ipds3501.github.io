@@ -1,49 +1,73 @@
-$("#mr_2024_box").click(function(){
-    $("#exampleModalLabel").text("Manajemen Resiko 2024");
-    $("#submenu_container").html('');
-    $("#add_btn").attr("href", "https://github.com/ipds3501/ipds3501.github.io/blob/master/mr.js");
+mr_json = [ 
+			                {
+			            	        nama: "Kepala BPS Kabupaten Pacitan",
+			  	                desc: "Manajemen Resiko Kepala BPS Kabupaten Pacitan.",
+			  	                ikon: "https://i.imgur.com/PLYhp4h.png",
+			  	                url: "https://drive.google.com/drive/folders/1X96nchDLA9qJkNbnmK0oqelM7Ko4Oy6I?usp=sharing"
+			                },
+			                {
+			  	                nama: "Sub Bagian Umum dan SAKIP",
+			  	                desc: "Manajamen Resiko Kepala Sub Bagian Umum dan SAKIP.",
+			  	                ikon: "https://i.imgur.com/3JYLvSh.png",
+			  	                url: "https://drive.google.com/drive/folders/171cbmiRS1Vp77icn5pFgred7o7kOJU4B?usp=sharing"
+			                },
+					{
+			  	                nama: "Tim Statistik Sosial dan Desa Cantik",
+			  	                desc: "Manajamen Resiko Tim Statistik Sosial dan Desa Cinta Statistik.",
+			  	                ikon: "https://i.imgur.com/pQcPTVZ.png",
+			  	                url: "https://drive.google.com/drive/folders/1tJZAWGtKKyaCg6RuGItOgdDTpDmcFxvm?usp=sharing"
+			                },
+				 	{
+			  	                nama: "Tim Statistik Pertanian",
+			  	                desc: "Manajamen Resiko Tim Statistik Pertanian.",
+			  	                ikon: "https://i.imgur.com/JNzawxA.png",
+			  	                url: "https://drive.google.com/drive/folders/1eKUeLwfqp4WJ7AsPe9SYWO0VkoLRXQa5?usp=sharing"
+			                },
+	 				{
+			  	                nama: "Tim Statistik Distribusi",
+			  	                desc: "Manajamen Resiko Tim Statistik Distribusi.",
+			  	                ikon: "https://i.imgur.com/1YDC6H2.png",
+			  	                url: "https://drive.google.com/drive/folders/1XjVvLQGFAwbHeVp5vF_abKqjb4BPRwKq?usp=sharing"
+			                },
+					{
+			  	                nama: "Tim Neraca Regional dan Analisis & SDI - IPS",
+			  	                desc: "Manajamen Resiko Tim Neraca Regional dan Analisis serta Satu Data Indonesia dan Indeks Penilaian Statistik.",
+			  	                ikon: "https://i.imgur.com/X8Axr7e.png",
+			  	                url: "https://drive.google.com/drive/folders/1SjsGDlcx73GF643Ucl2TexwXAoR4whC4?usp=sharing"
+			                },
+					{
+			  	                nama: "Tim IPDS",
+			  	                desc: "Manajamen Resiko Tim IPDS.",
+			  	                ikon: "https://i.imgur.com/O6PMOys.png",
+			  	                url: "https://drive.google.com/drive/folders/1Zs2-KyuMiVAptPLiYdGtgiTIHjONwssZ?usp=sharing"
+			                },
+					{
+			  	                nama: "Tim Industri dan PEK",
+			  	                desc: "Manajamen Resiko Tim Industri dan Pertambangan, Energi dan Konstruksi.",
+			  	                ikon: "https://i.imgur.com/TKDVbp2.png",
+			  	                url: "https://drive.google.com/drive/folders/1axfERrjc6wEYyr5yDOs_MnnnT6OKK9d8?usp=sharing"
+			                },
+					{
+			  	                nama: "Tim Pojok Statistik dan PEKPPP",
+			  	                desc: "Manajamen Resiko Tim Pojok Statistik dan PEKPPP.",
+			  	                ikon: "https://i.imgur.com/PnqPjUo.png",
+			  	                url: "https://drive.google.com/drive/folders/1Un7GsxfueYCA5_28QCREEijC7DAAhv0t?usp=sharing"
+			                },
+					{
+			  	                nama: "Tim HUMAS",
+			  	                desc: "Manajamen Resiko Tim Hubungan Masyarakat.",
+			  	                ikon: "https://i.imgur.com/yoELOpw.jpeg",
+			  	                url: "https://drive.google.com/drive/folders/1FZQyQXIft7vkMwC7HrQaUixNZkgxoCh3?usp=sharing"
+			                },
+	
+  			              //salin di bawah baris spasi ini 
 
-    for (var i = 0; i <= mr_dict.length - 1; i++) {
-        if (mr_dict[i].tahun === 2024) {
-            $("#submenu_container").append(`
-                <a class="col p-0 m-0 text-dark" target="_blank" href="${mr_dict[i].url}">
-                    <div class="box p-1">
-                        <div class="our-services border border-secondary">
-                            <div class="iconm bg-light w-75 d-flex align-items-center justify-content-center">
-                                <img id="icon_apl" src="${mr_dict[i].ikon}" class="oversize p-1">
-                            </div>
-                            <p class="fw-light mt-2" id="desc_apl">
-                                <strong class="h6">${mr_dict[i].nama}</strong><br>${mr_dict[i].desc}
-                            </p>
-                        </div>
-                    </div>
-                </a>
-            `);
-        }
-    }
-});
+			                ];
 
-$("#mr_2025_box").click(function(){
-    $("#exampleModalLabel").text("Manajemen Resiko 2025");
-    $("#submenu_container").html('');
-    $("#add_btn").attr("href", "https://github.com/ipds3501/ipds3501.github.io/blob/master/mr.js");
-
-    for (var i = 0; i <= mr_dict.length - 1; i++) {
-        if (mr_dict[i].tahun === 2025) {
-            $("#submenu_container").append(`
-                <a class="col p-0 m-0 text-dark" target="_blank" href="${mr_dict[i].url}">
-                    <div class="box p-1">
-                        <div class="our-services border border-secondary">
-                            <div class="iconm bg-light w-75 d-flex align-items-center justify-content-center">
-                                <img id="icon_apl" src="${mr_dict[i].ikon}" class="oversize p-1">
-                            </div>
-                            <p class="fw-light mt-2" id="desc_apl">
-                                <strong class="h6">${mr_dict[i].nama}</strong><br>${mr_dict[i].desc}
-                            </p>
-                        </div>
-                    </div>
-                </a>
-            `);
-        }
-    }
-});
+// Untuk menambahkan tautan, salin kode berikut, hapus 2 garis miring dan tempelkan dibaris paling bawah dari kode diatas
+			// ,{
+			// 	nama: "nama aplikasi",
+			// 	desc: "deskripsi aplikasi",
+			// 	ikon: "ikon aplikasi",
+			//  url: "tautan aplikasi"
+			// }"
