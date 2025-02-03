@@ -740,14 +740,17 @@
 						<button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
 					</div>
 					<div class="modal-body">
-						<div class="container-fluid mb-5 p-3">
-						    <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 g-3" id="submenu_container">
-						        
-						        
+						<!-- Add Submenu Buttons -->
+    <div class="d-flex justify-content-center">
+        <button class="btn btn-primary m-2" onclick="loadMRData(2024)">2024</button>
+        <button class="btn btn-success m-2" onclick="loadMRData(2025)">2025</button>
+    </div>
 
-						    </div>
-						</div>
-					</div>
+    <div class="container-fluid mb-5 p-3">
+        <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 g-3" id="submenu_container">
+        </div>
+    </div>
+</div>
 					
 					<div class="modal-footer">
 						<a href="#" target="_blank" class="btn btn-info" id="add_btn"  role="button">Tambah Tautan</a>
@@ -773,6 +776,47 @@
 		<script type="text/javascript" src="mr.js"></script>
 
 		<script type="text/javascript">
+			<script type="text/javascript">
+document.addEventListener("DOMContentLoaded", function() {
+    function loadMRData(year) {
+        $("#submenu_container").html(''); // Clear previous submenu items
+
+        let filteredData = mr_json.filter(item => item.year === year);
+
+        filteredData.forEach(item => {
+            $("#submenu_container").append(`
+                <a class="col p-0 m-0 text-dark" target="_blank" href="${item.url}">
+                    <div class="box p-1">
+                        <div class="our-services border border-secondary" style="min-height:150px">
+                            <div class="iconm bg-light w-75 d-flex align-items-center justify-content-center" style="min-height:50px">
+                                <img id="icon_apl" src="${item.ikon}" class="oversize p-1">
+                            </div>
+                            <p class="fw-light mt-2" id="desc_apl" style="font-size: 16px;">
+                                <strong class="h6">${item.nama}, </strong>${item.desc}
+                            </p>
+                        </div>
+                    </div>
+                </a>
+            `);
+        });
+    }
+
+    // When "Manajemen Resiko" button is clicked
+    $("#mr_box").click(function(){
+        $("#exampleModalLabel").text("Manajemen Resiko");
+
+        // Add submenu buttons for selecting 2024 and 2025
+        $("#submenu_container").html(`
+            <div class="d-flex justify-content-center mb-3">
+                <button class="btn btn-primary m-2" onclick="loadMRData(2024)">2024</button>
+                <button class="btn btn-success m-2" onclick="loadMRData(2025)">2025</button>
+            </div>
+        `);
+
+        loadMRData(2024); // Default: Load 2024 data
+    });
+});
+</script>
 		
 			// Check if the user is logged in
 			if (localStorage.getItem('isLoggedIn') !== 'true') {
