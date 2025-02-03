@@ -26,57 +26,23 @@ const mr_json = [
         ikon: "https://i.imgur.com/JNzawxA.png",
         url: "https://drive.google.com/drive/folders/1eKUeLwfqp4WJ7AsPe9SYWO0VkoLRXQa5?usp=sharing",
         tahun: 2025
-    },
-    {
-        nama: "Tim Statistik Distribusi",
-        desc: "Manajamen Resiko Tim Statistik Distribusi.",
-        ikon: "https://i.imgur.com/1YDC6H2.png",
-        url: "https://drive.google.com/drive/folders/1XjVvLQGFAwbHeVp5vF_abKqjb4BPRwKq?usp=sharing",
-        tahun: 2024
-    },
-    {
-        nama: "Tim Neraca Regional dan Analisis & SDI - IPS",
-        desc: "Manajamen Resiko Tim Neraca Regional dan Analisis serta Satu Data Indonesia dan Indeks Penilaian Statistik.",
-        ikon: "https://i.imgur.com/X8Axr7e.png",
-        url: "https://drive.google.com/drive/folders/1SjsGDlcx73GF643Ucl2TexwXAoR4whC4?usp=sharing",
-        tahun: 2025
-    },
-    {
-        nama: "Tim IPDS",
-        desc: "Manajamen Resiko Tim IPDS.",
-        ikon: "https://i.imgur.com/O6PMOys.png",
-        url: "https://drive.google.com/drive/folders/1Zs2-KyuMiVAptPLiYdGtgiTIHjONwssZ?usp=sharing",
-        tahun: 2025
-    },
-    {
-        nama: "Tim Industri dan PEK",
-        desc: "Manajamen Resiko Tim Industri dan Pertambangan, Energi dan Konstruksi.",
-        ikon: "https://i.imgur.com/TKDVbp2.png",
-        url: "https://drive.google.com/drive/folders/1axfERrjc6wEYyr5yDOs_MnnnT6OKK9d8?usp=sharing",
-        tahun: 2024
-    },
-    {
-        nama: "Tim Pojok Statistik dan PEKPPP",
-        desc: "Manajamen Resiko Tim Pojok Statistik dan PEKPPP.",
-        ikon: "https://i.imgur.com/PnqPjUo.png",
-        url: "https://drive.google.com/drive/folders/1Un7GsxfueYCA5_28QCREEijC7DAAhv0t?usp=sharing",
-        tahun: 2025
-    },
-    {
-        nama: "Tim HUMAS",
-        desc: "Manajamen Resiko Tim Hubungan Masyarakat.",
-        ikon: "https://i.imgur.com/yoELOpw.jpeg",
-        url: "https://drive.google.com/drive/folders/1FZQyQXIft7vkMwC7HrQaUixNZkgxoCh3?usp=sharing",
-        tahun: 2024
     }
 ];
 
-// Separate the list into two arrays based on the year
-const mr_json_2024 = mr_json.filter(item => item.tahun === 2024);
-const mr_json_2025 = mr_json.filter(item => item.tahun === 2025);
+function generateMenu(tahun) {
+    return mr_json.filter(item => item.tahun === tahun).map(item => `
+        <div class="menu-item">
+            <img src="${item.ikon}" alt="${item.nama}" width="50">
+            <h3>${item.nama}</h3>
+            <p>${item.desc}</p>
+            <a href="${item.url}" target="_blank">Buka</a>
+        </div>
+    `).join('');
+}
 
-console.log("Data for 2024:", mr_json_2024);
-console.log("Data for 2025:", mr_json_2025);
+document.getElementById("menu2024").innerHTML = generateMenu(2024);
+document.getElementById("menu2025").innerHTML = generateMenu(2025);
+
 	
   			              //salin di bawah baris spasi ini 
 
