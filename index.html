@@ -1032,31 +1032,19 @@
 			});
 
 
-			$("#mr_box").click(function(){
-				$("#exampleModalLabel").text("ManajemenResiko");
-				$("#submenu_container").html('');
-				$("#add_btn").attr("href", "https://github.com/ipds3501/ipds3501.github.io/blob/master/inovasi.js");
+	$("#mr_box").click(function(){
+    $("#exampleModalLabel").text("Manajemen Resiko");
 
-			  	for (var i = 0; i <= mr_dict.length-1; i++) {
-			  		var judul = '';
-					if (mr_dict[i].nama == '') {
-						judul = '';
-					} else {
-						judul = mr_dict[i].nama+', ';
-					}
-			  		console.log(mr_dict.length);	
-			  		
-			  		$("#submenu_container").append('<a class="col p-0 m-0 text-dark" target="_blank" href="'+mr_dict[i].url+'">'+
-						            '<div class="box p-1">'+
-						                '<div class="our-services border border-secondary '+box_color[getRandomInt(0,box_color.length-1)]+'" style="min-height:150px">'+
-						                    '<div class="iconm bg-light w-75 d-flex align-items-center justify-content-center" style="min-height:50px"> <img id="icon_apl" src="'+mr_dict[i].ikon+'" class="oversize p-1"> </div>'+
-						                    '<p class="fw-light mt-2" id="desc_apl" style="font-size: 16px;"><strong class="h6">'+judul+'</strong>'+mr_dict[i].desc+'</p>'+
-						                '</div>'+
-						            '</div>'+
-						        '</a>');
-			  	}
-			  		
-			});
+    // Add year selection buttons dynamically
+    $("#submenu_container").html(`
+        <div class="d-flex justify-content-center mb-3">
+            <button class="btn btn-primary m-2" onclick="loadMRSubmenu(2024)">2024</button>
+            <button class="btn btn-success m-2" onclick="loadMRSubmenu(2025)">2025</button>
+        </div>
+    `);
+
+    loadMRSubmenu(2024); // Default view: 2024
+});
 			
 			
 			particlesJS("particles-js", {
