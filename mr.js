@@ -43,11 +43,45 @@ const mr_json = [
     }
 ];
 
-// Function to load filtered "Manajemen Resiko" data based on year
+console.log("Script Loaded: Checking if mr_json is available...");
+console.log("mr_json Data:", mr_json); // Check if mr_json is loaded
+
+$("#mr_box").click(function(){
+    console.log("Manajemen Resiko Clicked!"); // Debug: Ensures function is triggered
+
+    $("#exampleModalLabel").text("Manajemen Resiko");
+
+    $("#submenu_container").html(`
+        <div class="d-flex justify-content-center mb-3">
+            <button class="btn btn-primary m-2" id="btn2024">2024</button>
+            <button class="btn btn-success m-2" id="btn2025">2025</button>
+        </div>
+    `);
+
+    console.log("2024 and 2025 buttons added!"); // Debug: Confirms buttons appear
+
+    // Attach event listeners
+    $("#btn2024").click(() => {
+        console.log("2024 Button Clicked!"); // Debug: Ensures button is working
+        loadMRSubmenu(2024);
+    });
+
+    $("#btn2025").click(() => {
+        console.log("2025 Button Clicked!"); // Debug: Ensures button is working
+        loadMRSubmenu(2025);
+    });
+
+    loadMRSubmenu(2024); // Default view: 2024
+});
+
+// Debugging function
 function loadMRSubmenu(year) {
-    $("#submenu_container").html(''); // Clear previous submenu items
+    console.log("Loading Data for Year:", year); // Debug: Check which year is being loaded
+
+    $("#submenu_container").html(""); // Clear previous items
 
     let filteredData = mr_json.filter(item => item.year === year);
+    console.log("Filtered Data:", filteredData); // Debug: Check if filtering works
 
     filteredData.forEach(item => {
         $("#submenu_container").append(`
@@ -65,19 +99,7 @@ function loadMRSubmenu(year) {
             </a>
         `);
     });
+
+    console.log("Data Loaded for:", year); // Debug: Ensures the function completes
 }
-
-// When "Manajemen Resiko" is clicked
-$("#mr_box").click(function(){
-    $("#exampleModalLabel").text("Manajemen Resiko");
-
-    // Add year selection buttons dynamically
-    $("#submenu_container").html(`
-        <div class="d-flex justify-content-center mb-3">
-            <button class="btn btn-primary m-2" onclick="loadMRSubmenu(2024)">2024</button>
-            <button class="btn btn-success m-2" onclick="loadMRSubmenu(2025)">2025</button>
-        </div>
-    `);
-
-    loadMRSubmenu(2024); // Default view: 2024
-});
+</script>
