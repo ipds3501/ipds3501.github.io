@@ -1032,26 +1032,16 @@
 			});
 
 
-	$("#mr_box").click(function(){
+			$("#mr_box").click(function(){
     $("#exampleModalLabel").text("Manajemen Resiko");
-
-    // Debug: Check if this function is called
-    console.log("Manajemen Resiko Clicked!");
 
     // Add year selection buttons dynamically
     $("#submenu_container").html(`
         <div class="d-flex justify-content-center mb-3">
-            <button class="btn btn-primary m-2" id="btn2024">2024</button>
-            <button class="btn btn-success m-2" id="btn2025">2025</button>
+            <button class="btn btn-primary m-2" onclick="loadMRSubmenu(2024)">2024</button>
+            <button class="btn btn-success m-2" onclick="loadMRSubmenu(2025)">2025</button>
         </div>
     `);
-
-    // Debug: Check if buttons are added
-    console.log("2024 and 2025 buttons added!");
-
-    // Attach event listeners to the buttons
-    $("#btn2024").click(() => loadMRSubmenu(2024));
-    $("#btn2025").click(() => loadMRSubmenu(2025));
 
     loadMRSubmenu(2024); // Default view: 2024
 });
