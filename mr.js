@@ -1,40 +1,31 @@
-const mr_json = [
-    {
-        nama: "Kepala BPS Kabupaten Pacitan",
-        desc: "Manajemen Resiko Kepala BPS Kabupaten Pacitan.",
-        ikon: "https://i.imgur.com/PLYhp4h.png",
-        url: "https://drive.google.com/drive/folders/1X96nchDLA9qJkNbnmK0oqelM7Ko4Oy6I?usp=sharing",
-        year: 2024
-    },
-    {
-        nama: "Sub Bagian Umum dan SAKIP",
-        desc: "Manajemen Resiko Kepala Sub Bagian Umum dan SAKIP.",
-        ikon: "https://i.imgur.com/3JYLvSh.png",
-        url: "https://drive.google.com/drive/folders/171cbmiRS1Vp77icn5pFgred7o7kOJU4B?usp=sharing",
-        year: 2025
-    },
-    {
-        nama: "Tim Statistik Sosial dan Desa Cantik",
-        desc: "Manajemen Resiko Tim Statistik Sosial dan Desa Cinta Statistik.",
-        ikon: "https://i.imgur.com/pQcPTVZ.png",
-        url: "https://drive.google.com/drive/folders/1tJZAWGtKKyaCg6RuGItOgdDTpDmcFxvm?usp=sharing",
-        year: 2024
-    },
-    {
-        nama: "Tim Statistik Pertanian",
-        desc: "Manajemen Resiko Tim Statistik Pertanian.",
-        ikon: "https://i.imgur.com/JNzawxA.png",
-        url: "https://drive.google.com/drive/folders/1eKUeLwfqp4WJ7AsPe9SYWO0VkoLRXQa5?usp=sharing",
-        year: 2025
-    }
-];
+// Add event listener for Manajemen Resiko modal
+$("#mr_box").click(function () {
+    // Add year selection buttons above submenu_container
+    $("#submenu_container").html(`
+        <div class="d-flex justify-content-center mb-3">
+            <button class="btn btn-primary m-2" onclick="loadMRSubmenu(2024)">2024</button>
+            <button class="btn btn-success m-2" onclick="loadMRSubmenu(2025)">2025</button>
+        </div>
+    `);
 
-// Function to filter and display "Manajemen Resiko" data by year
+    // Load default year (2024) data when the modal opens
+    loadMRSubmenu(2024);
+});
+
+// Function to dynamically filter and display submenu items based on the year
 function loadMRSubmenu(year) {
-    $("#submenu_container").html(''); // Clear previous items
+    // Clear the submenu container
+    $("#submenu_container").html(`
+        <div class="d-flex justify-content-center mb-3">
+            <button class="btn btn-primary m-2" onclick="loadMRSubmenu(2024)">2024</button>
+            <button class="btn btn-success m-2" onclick="loadMRSubmenu(2025)">2025</button>
+        </div>
+    `);
 
+    // Filter the JSON data for the selected year
     let filteredData = mr_json.filter(item => item.year === year);
 
+    // Append filtered items to the submenu
     filteredData.forEach(item => {
         $("#submenu_container").append(`
             <a class="col p-0 m-0 text-dark" target="_blank" href="${item.url}">
@@ -53,22 +44,27 @@ function loadMRSubmenu(year) {
     });
 }
 
-// When "Manajemen Resiko" (`mr_box`) is clicked
-$("#mr_box").click(function(){
-    $("#exampleModalLabel").text("Manajemen Resiko");
-
-    // Add year selection buttons inside the modal
-    $("#submenu_container").html(`
-        <div class="d-flex justify-content-center mb-3">
-            <button class="btn btn-primary m-2" onclick="loadMRSubmenu(2024)">2024</button>
-            <button class="btn btn-success m-2" onclick="loadMRSubmenu(2025)">2025</button>
-        </div>
-    `);
-
-    loadMRSubmenu(2024); // Default view: Load 2024 data first
-});
-
-// Export for use in index.html (if needed for Node.js-based environments)
-if (typeof module !== 'undefined') {
-    module.exports = mr_json;
-}
+// Example JSON data for testing
+const mr_json = [
+    {
+        nama: "Kepala BPS Kabupaten Pacitan",
+        year: 2024,
+        url: "https://example.com/2024/1",
+        ikon: "https://via.placeholder.com/50",
+        desc: "Manajemen Resiko Kepala BPS Kabupaten Pacitan."
+    },
+    {
+        nama: "Tim Statistik Sosial dan Desa Cantik",
+        year: 2024,
+        url: "https://example.com/2024/2",
+        ikon: "https://via.placeholder.com/50",
+        desc: "Manajemen Resiko Tim Statistik Sosial dan Desa Cantik."
+    },
+    {
+        nama: "Tim Statistik Pertanian",
+        year: 2025,
+        url: "https://example.com/2025/1",
+        ikon: "https://via.placeholder.com/50",
+        desc: "Manajemen Resiko Tim Statistik Pertanian."
+    }
+];
