@@ -1,4 +1,10 @@
 const mr_json = [
+    setTimeout(() => {
+    fetch("https://github.com/_graphql?body=...")
+        .then(response => response.json())
+        .then(data => console.log("GitHub API Data:", data))
+        .catch(error => console.error("GitHub API Fetch Error:", error));
+}, 5000); // Delays request by 5 seconds
     {
         nama: "Kepala BPS Kabupaten Pacitan",
         desc: "Manajemen Resiko Kepala BPS Kabupaten Pacitan.",
