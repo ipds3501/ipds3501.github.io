@@ -56,7 +56,7 @@ const mr_json = [
         {
         nama: "Kepala BPS Kabupaten Pacitan",
         year: 2025,
-        url: "https://drive.google.com/drive/folders/1rU1jpLN9h0C0l5RHhDRJI5ftoCPzc8hg?usp=sharing",
+        url: "https://drive.google.com/drive/folders/1be7PkgHSuQtOO-sLvOhuhV5dv28r8wX7?usp=drive_link",
         ikon: "https://i.imgur.com/PLYhp4h.png",
         desc: "Manajemen Resiko Kepala BPS Kabupaten Pacitan."
     },
@@ -68,11 +68,11 @@ const mr_json = [
     desc: "Manajamen Resiko Kepala Sub Bagian Umum dan SAKIP."
 	},
     {
-	nama: "Sub Bagian Umum dan SAKIP",
+	nama: "Tim Bagian Umum",
     year: 2025,
 	ikon: "https://i.imgur.com/3JYLvSh.png",
-	url: "x",
-    desc: "Manajamen Resiko Kepala Sub Bagian Umum dan SAKIP."
+	url: "https://drive.google.com/drive/folders/1txRGWYKPVOmYE7UpYmffhkOLVioRjav7?usp=sharing",
+    desc: "Manajamen Resiko Kepala Tim Bagian Umum."
 	},
     {
         nama: "Tim Statistik Sosial dan Desa Cantik",
@@ -84,7 +84,7 @@ const mr_json = [
     {
         nama: "Tim Statistik Sosial",
         year: 2025,
-        url: "X",
+        url: "https://drive.google.com/drive/folders/1yvJJ3wdNXMgWMKsWG42JKYjRSpeeG7pm?usp=sharing",
         ikon: "https://i.imgur.com/pQcPTVZ.png",
         desc: "Manajemen Resiko Tim Statistik Sosial (Susenas, Sakerduk, Hansos dan Descan."
     },
@@ -98,7 +98,7 @@ const mr_json = [
     {
         nama: "Tim Statistik Produksi",
         year: 2025,
-        url: "x",
+        url: "https://drive.google.com/drive/folders/1uXsiY7p6GIOhkiqu-aqHVmigdA4S-gG6?usp=sharing",
         ikon: "https://i.imgur.com/JNzawxA.png",
         desc: "Manajemen Resiko Tim Statistik Produksi (Pertanian, Industri & PEK) ."
     },
@@ -112,7 +112,7 @@ const mr_json = [
     {
         nama: "Tim Statistik Distribusi",
         year: 2025,
-        url: "X",
+        url: "https://drive.google.com/drive/folders/1JDRTEHWKeJkCpyEPa2oFboYwtXBaPcQl?usp=sharing",
         ikon: "https://i.imgur.com/1YDC6H2.png",
         desc: "Manajemen Resiko Tim Statistik Distribusi (Distribusi Jasa dan Harga)."
     },
@@ -126,7 +126,7 @@ const mr_json = [
     {
         nama: "Tim Nerwilis",
         year: 2025,
-        url: "X",
+        url: "https://drive.google.com/drive/folders/1QrC-arzx0y-oNV2fxt2ix779N3eMiw8u?usp=sharing",
         ikon: "https://i.imgur.com/X8Axr7e.png",
         desc: "Manajemen Resiko Tim Nerwilis (Neraca Produksi, Konsumsi & Analisis)."
     },
@@ -140,7 +140,7 @@ const mr_json = [
     {
         nama: "Tim IPDS",
         year: 2025,
-        url: "X",
+        url: "https://drive.google.com/drive/folders/1v7_DHNWYFYOWSJkRszw3zqE513hyH_bm?usp=sharing",
         ikon: "https://i.imgur.com/O6PMOys.png",
         desc: "Manajamen Resiko Tim IPDS ( Diseminasi, Pengolahan Data dan Jaringan)."
     },
@@ -161,7 +161,7 @@ const mr_json = [
     {
         nama: "Tim Sakip, ZI dan EPSS",
         year: 2025,
-        url: "X",
+        url: "https://drive.google.com/drive/folders/17_SPswQ930CJGWEJRYAEyIQkUDNIhJ1e?usp=sharing",
         ikon: "https://i.imgur.com/PnqPjUo.png",
         desc: "Manajamen Resiko Tim SAKIP, ZI dan EPSS."
     },
@@ -175,8 +175,8 @@ const mr_json = [
     {
         nama: "Tim HUMAS, Pojok Statistik dan PSS",
         year: 2025,
-        url: "X",
-        ikon: "https://i.imgur.com/yoELOpw.jpeg",
+        url: "https://drive.google.com/drive/folders/1OSFnr0ROtz5QeHmdSqsjVGJ04JeiOQZy?usp=sharing",
+        ikon: "https://drive.google.com/file/d/1HwCm-8vQIRrc0noohhipTDsSDFVPji1c/view",
         desc: "Manajamen Resiko Tim Hubungan Masyarakat, Pojok Statistik dan PSS."
     }
 ];
