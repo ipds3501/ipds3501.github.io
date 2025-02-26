@@ -140,19 +140,19 @@ administrasi_json = [
 			{
 				"nama":	"Draft Surat BPS Kabupaten Pacitan",
 				"desc":	"Berisikan draft surat BPS Kabupaten Pacitan",
-				"ikon":	"https://ibb.co.com/zhr2KN59",
+				"ikon":	"https://imgur.com/oRTeJSK",
 				"url":	"https://drive.google.com/drive/folders/1wLRMUDAsLKp6lMm-ZUlzw8q72O7sLxkc?usp=sharing"
 			},
 				{
 				"nama":	"Surat Masuk BPS Kabupaten Pacitan",
 				"desc":	"Berisikan Surat yang Masuk ke BPS Kabupaten Pacitan",
-				"ikon":	"https://ibb.co.com/5W8P1Kmc",
+				"ikon":	"https://imgur.com/WU6O0E8",
 				"url":	"https://drive.google.com/drive/folders/1J2VJWrN9QtWCZJgUWp6gkk2ekP--2okG?usp=sharing"
 			},
 				{
 				"nama":	"Surat Keluar BPS Kabupaten Pacitan",
 				"desc":	"Berisikan Surat Keluar BPS Kabupaten Pacitan",
-				"ikon":	"https://ibb.co.com/hFjNrCTh",
+				"ikon":	"https://imgur.com/fZJtAb1",
 				"url":	"https://drive.google.com/drive/folders/1frKxHaxoDul9fY9KSrBi4Xg3YaBVzuSb?usp=sharing"
 			}
 			
