@@ -176,7 +176,7 @@ const mr_json = [
         nama: "Tim HUMAS, Pojok Statistik dan PSS",
         year: 2025,
         url: "https://drive.google.com/drive/folders/1OSFnr0ROtz5QeHmdSqsjVGJ04JeiOQZy?usp=sharing",
-        ikon: "https://imgur.com/a/1uibEGg",
+        ikon: "https://imgur.com/7ZN6jM9",
         desc: "Manajamen Resiko Tim Hubungan Masyarakat, Pojok Statistik dan PSS."
     }
 ];
