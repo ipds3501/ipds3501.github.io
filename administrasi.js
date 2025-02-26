@@ -136,6 +136,24 @@ administrasi_json = [
 				"desc":	"Berisikan folder Zona Integritas BPS Kabupaten Pacitan",
 				"ikon":	"https://i.ibb.co.com/XX7Y0sQ/logo-color.png",
 				"url":	"http://s.bps.go.id/2024LKEZI_3501"
+			},
+			{
+				"nama":	"Draft Surat BPS Kabupaten Pacitan",
+				"desc":	"Berisikan draft surat BPS Kabupaten Pacitan",
+				"ikon":	"https://ibb.co.com/zhr2KN59",
+				"url":	"https://drive.google.com/drive/folders/1wLRMUDAsLKp6lMm-ZUlzw8q72O7sLxkc?usp=sharing"
+			},
+				{
+				"nama":	"Surat Masuk BPS Kabupaten Pacitan",
+				"desc":	"Berisikan Surat yang Masuk ke BPS Kabupaten Pacitan",
+				"ikon":	"https://ibb.co.com/5W8P1Kmc",
+				"url":	"https://drive.google.com/drive/folders/1J2VJWrN9QtWCZJgUWp6gkk2ekP--2okG?usp=sharing"
+			},
+				{
+				"nama":	"Surat Keluar BPS Kabupaten Pacitan",
+				"desc":	"Berisikan Surat Keluar BPS Kabupaten Pacitan",
+				"ikon":	"https://ibb.co.com/hFjNrCTh",
+				"url":	"https://drive.google.com/drive/folders/1frKxHaxoDul9fY9KSrBi4Xg3YaBVzuSb?usp=sharing"
 			}
 			
 			//salin di bawah baris spasi ini 
