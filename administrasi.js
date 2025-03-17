@@ -154,6 +154,12 @@ administrasi_json = [
 				"desc":	"Berisikan Surat Keluar BPS Kabupaten Pacitan",
 				"ikon":	"https://imgur.com/fZJtAb1",
 				"url":	"https://drive.google.com/drive/folders/1frKxHaxoDul9fY9KSrBi4Xg3YaBVzuSb?usp=sharing"
+			},
+				{
+				"nama":	"MPH-Kipapp",
+				"desc":	"berisikan semua file berkaitan dengan pengisian MPH dan Kipapp",
+				"ikon":	"https://imgur.com/OlMskKP",
+				"url":	"https://drive.google.com/drive/folders/1k3xIgaBbvCGCP0Ovm0Hxrd6lnAxvi3-k?usp=sharing"
 			}
 			
 			//salin di bawah baris spasi ini 
