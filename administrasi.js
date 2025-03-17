@@ -140,25 +140,25 @@ administrasi_json = [
 			{
 				"nama":	"Draft Surat BPS Kabupaten Pacitan",
 				"desc":	"Berisikan draft surat BPS Kabupaten Pacitan",
-				"ikon":	"https://imgur.com/oRTeJSK",
+				"ikon":	"https://i.imgur.com/oRTeJSK.jpeg",
 				"url":	"https://drive.google.com/drive/folders/1wLRMUDAsLKp6lMm-ZUlzw8q72O7sLxkc?usp=sharing"
 			},
 				{
 				"nama":	"Surat Masuk BPS Kabupaten Pacitan",
 				"desc":	"Berisikan Surat yang Masuk ke BPS Kabupaten Pacitan",
-				"ikon":	"https://imgur.com/WU6O0E8",
+				"ikon":	"https://i.imgur.com/WU6O0E8.jpeg",
 				"url":	"https://drive.google.com/drive/folders/1J2VJWrN9QtWCZJgUWp6gkk2ekP--2okG?usp=sharing"
 			},
 				{
 				"nama":	"Surat Keluar BPS Kabupaten Pacitan",
 				"desc":	"Berisikan Surat Keluar BPS Kabupaten Pacitan",
-				"ikon":	"https://imgur.com/fZJtAb1",
+				"ikon":	"https://i.imgur.com/fZJtAb1.jpeg",
 				"url":	"https://drive.google.com/drive/folders/1frKxHaxoDul9fY9KSrBi4Xg3YaBVzuSb?usp=sharing"
 			},
 				{
 				"nama":	"MPH-Kipapp",
 				"desc":	"berisikan semua file berkaitan dengan pengisian MPH dan Kipapp",
-				"ikon":	"https://imgur.com/OlMskKP",
+				"ikon":	"https://i.imgur.com/OlMskKP.png",
 				"url":	"https://drive.google.com/drive/folders/1k3xIgaBbvCGCP0Ovm0Hxrd6lnAxvi3-k?usp=sharing"
 			}
 			
