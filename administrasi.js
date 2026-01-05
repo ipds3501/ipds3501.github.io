@@ -96,16 +96,10 @@ administrasi_json = [
 			  	"url": "https://drive.google.com/drive/folders/1B9vkmHETsPL4xnDU6RVbakpfTwbgW8eY?usp=sharing"
 			},
 			{
-				"nama": "RPD 2024",
+				"nama": "RPD 2026",
 				"desc": "Rencana Penarikan Dana",
 				"ikon": "https://i.imgur.com/O3iJVXV.png",
-			  	"url": "https://docs.google.com/spreadsheets/d/1ELzc_ZL_VsRskscCG5abKCr0ttwNiyvK9G9TLmodiGM/edit?usp=sharing"
-			},
-			{
-				"nama": "RPD 2025",
-				"desc": "Rencana Penarikan Dana",
-				"ikon": "https://i.imgur.com/O3iJVXV.png",
-			  	"url": "https://docs.google.com/spreadsheets/d/1HBpMZw6QJYcJ2SLoBT8LaIK1Ogci6bzPvWuSAADHaFQ/edit?usp=sharing"
+			  	"url": "https://docs.google.com/spreadsheets/d/1vHC3eOse52c6GSJpK0Ze5yUi0HhoyGQpxcD1NFl147U/edit?usp=sharing"
 			},
 			{
 				"nama": "BAST Petugas Lapangan",
@@ -173,3 +167,4 @@ administrasi_json = [
 			// 	ikon: "ikon aplikasi",
 			//  url: "tautan aplikasi"
 			// }
+
