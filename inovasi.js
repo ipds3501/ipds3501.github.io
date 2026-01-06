@@ -12,16 +12,28 @@ inovasi_json = [
 			  	url: "https://drive.google.com/drive/folders/1Cy9LdEe60lJL-k2JsYhvHLpeaflbm6ly?usp=sharing"
 			},
 			{
+			  	nama: "A.Gi.To",
+			  	desc: "Apel Pagi Tetap Oke",
+			  	ikon: "https://i.imgur.com/9IVpyzW.png",
+			  	url: "https://drive.google.com/drive/folders/1sUX0rzos3BJQZEuhHm9-xu2KBatPWIPz?usp=sharing"
+			},
+			{
+			  	nama: "JUMBARA",
+			  	desc: "Jumat Bersih dan Olahraga",
+			  	ikon: "https://i.imgur.com/ioWaA63.png",
+			  	url: "https://drive.google.com/drive/folders/1wLeOYy_Fn1lw14Pz1zZ-wSnyJZxbeWsV?usp=sharing"
+			},
+			{
+			  	nama: "Rantai Hati",
+			  	desc: "RAbu saNTAI naseHAT pagI",
+			  	ikon: "https://i.imgur.com/aaUG0pD.png",
+			  	url: "https://drive.google.com/drive/folders/19hcehHyk7HmcEFo5TS7OLvLT9jqAVIvX?usp=sharing"
+			},
+			{
 			  	nama: "SSWW",
 			  	desc: "Sat Set Wat Wet",
 			  	ikon: "https://i.imgur.com/KnxKVN5.png",
 			  	url: "https://drive.google.com/drive/folders/1kg3FQSmJ6PvoHf82_gIzt20aHnwEQLad?usp=sharing"
-			},
-			{
-			  	nama: "A.Gi.To",
-			  	desc: "Apel Pagi Tetap Oke",
-			  	ikon: "https://i.imgur.com/9IVpyzW.png",
-			  	url: "https://drive.google.com/drive/folders/1--ycWbP3d6xSsXYjStKoFNfuv-RYAv4x?usp=sharing"
 			},
 			{
 			  	nama: "GASAK",
@@ -46,12 +58,6 @@ inovasi_json = [
 			  	desc: "Sistem Informasi Kepegawaian Lokal",
 			  	ikon: "https://i.imgur.com/UckaZzG.png",
 			  	url: "https://drive.google.com/drive/folders/1WfaQh0HS5qFYDM5o6h6-pxtYw3ZGKYP0?usp=sharing"
-			},
-			{
-			  	nama: "JUMBARA",
-			  	desc: "Jumat Bersih dan Olahraga",
-			  	ikon: "https://i.imgur.com/ioWaA63.png",
-			  	url: "https://drive.google.com/drive/folders/1S_OHvt2XRvvlbwZ6NaScBQzQcx7CtqSi?usp=sharing"
 			},
 			{
 			  	nama: "KOKI SDAP",
