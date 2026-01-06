@@ -57,7 +57,7 @@ administrasi_json = [
 				"nama": "Pedoman Administrasi",
 				"desc": "Pedoman Administrasi",
 				"ikon": "https://i.imgur.com/fMTtHQv.png",
-			  	"url": "https://sites.google.com/view/pedoman-adm-regsosek2022/home"
+			  	"url": "https://drive.google.com/drive/folders/12nIyMs4LHWPzhGhK82Dz5832jZXx-pc0?usp=sharing"
 			},
 			{
 				"nama": "Nomor Kontrak Pengadaan Barang/Jasa",
@@ -167,5 +167,6 @@ administrasi_json = [
 			// 	ikon: "ikon aplikasi",
 			//  url: "tautan aplikasi"
 			// }
+
 
 
