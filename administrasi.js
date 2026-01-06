@@ -55,7 +55,7 @@ administrasi_json = [
 			},
 			{
 				"nama": "Pedoman Administrasi",
-				"desc": "Pedoman Administrasi Regsosek 2022",
+				"desc": "Pedoman Administrasi",
 				"ikon": "https://i.imgur.com/fMTtHQv.png",
 			  	"url": "https://sites.google.com/view/pedoman-adm-regsosek2022/home"
 			},
@@ -167,4 +167,5 @@ administrasi_json = [
 			// 	ikon: "ikon aplikasi",
 			//  url: "tautan aplikasi"
 			// }
+
 
