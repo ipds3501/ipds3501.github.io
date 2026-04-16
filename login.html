@@ -1,170 +1,248 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>SijiAE - Login</title>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet">
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/crypto-js/4.1.1/crypto-js.min.js"></script>
-    
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            background-color: #f0f0f0;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            height: 100vh;
-            margin: 0;
-        }
-        .login-container {
-            background-color: white;
-            padding: 30px;
-            border-radius: 15px;
-            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
-            width: 100%;
-            max-width: 400px;
-        }
-        .login-container input[type="text"],
-        .login-container input[type="password"] {
-            width: 100%;
-            padding: 12px;
-            margin: 10px 0;
-            border: 1px solid #ddd;
-            border-radius: 8px;
-        }
-        .login-container input[type="submit"] {
-            width: 100%;
-            padding: 12px;
-            background-color: #007BFF;
-            border: none;
-            border-radius: 8px;
-            color: white;
-            font-weight: bold;
-            cursor: pointer;
-            transition: 0.3s;
-        }
-        .login-container input[type="submit"]:hover {
-            background-color: #0056b3;
-        }
-        .error-message {
-            color: #dc3545;
-            text-align: center;
-            margin-top: 15px;
-            font-size: 14px;
-        }
-        
-        /* Efek Animasi Judul */
-        .fantasy { font-family: fantasy; }
-        .animate-character {
-            text-transform: uppercase;
-            background-image: linear-gradient(-225deg, #231557 0%, #44107a 29%, #ff1361 67%, #fff800 100%);
-            background-size: 200% auto;
-            color: #fff;
-            background-clip: text;
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            animation: textclip 2s linear infinite;
-            display: inline-block;
-            font-size: 40px;
-            width: 100%;
-            text-align: center;
-        }
-        @keyframes textclip { to { background-position: 200% center; } }
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SijiAE</title>
+	<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f0f0f0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+        .login-container {
+            background-color: white;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        .login-container h2 {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+        .login-container input[type="text"],
+        .login-container input[type="password"] {
+            width: 100%;
+            padding: 10px;
+            margin: 10px 0;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+        .login-container input[type="submit"] {
+            width: 100%;
+            padding: 10px;
+            background-color: #007BFF;
+            border: none;
+            border-radius: 5px;
+            color: white;
+            cursor: pointer;
+        }
+        .login-container input[type="submit"]:hover {
+            background-color: #0056b3;
+        }
+        .error-message {
+            color: red;
+            text-align: center;
+            margin-top: 10px;
+        }
+		
+		
+		
+		.fantasy {
+				font-family: fantasy;
+			}
+		.animate-character
+			{
+				text-transform: uppercase;
+				background-image: linear-gradient(
+					-225deg,
+					#231557 0%,
+					#44107a 29%,
+					#ff1361 67%,
+					#fff800 100%
+				);
+				background-size: auto auto;
+				background-clip: border-box;
+				background-size: 200% auto;
+				color: #fff;
+				background-clip: text;
+				text-fill-color: transparent;
+				-webkit-background-clip: text;
+				-webkit-text-fill-color: transparent;
+				animation: textclip 2s linear infinite;
+				display: inline-block;
+				font-size: 70px;
+			}
+			
+		@keyframes textclip {
+				to {
+					background-position: 200% center;
+				}
+			}
 
-        /* Typewriter Section */
-        .containertypewritter { height: 25px; text-align: center; margin-bottom: 20px; }
-        .typewriter { font-size: 14px; font-weight: bold; }
-        .typewriter span { border-right: solid 3px; animation: cursor 1s infinite; }
-        @keyframes cursor { from { border-color: inherit; } to { border-color: transparent; } }
-    </style>
+			/*---   TYPEWRITER   ---*/
+			
+			.containertypewritter {
+				height: 2vh;
+			    align-items: center;
+			    box-sizing: border-box;
+			    background: var(--bg-color);
+			}
+
+			.typewriter {
+			    font-family: Arial, Helvetica, sans-serif;
+			    font-size: 14px;
+			    color: #fff;
+			    font-weight: bold;
+			    position: relative;
+			    margin: 0;
+			    transform: translateY(-50%);
+			}
+
+			.typewriter span {
+			    color: var(--text-color);
+			    padding: 0px;
+			    border-right: solid var(--text-color) 10px; 
+			    animation: cursor 1s ease-in-out infinite;
+			}
+
+			@keyframes cursor {
+			    from { border-color: var(--text-color); }
+			    to { border-color: transparent; }
+			}
+
+			@media (max-width: 576px) {
+			    .typewriter { font-size: 14px; }
+			}
+			@media (max-width: 768px) {
+			    .typewriter { font-size: 14px; }
+			}
+
+			.oversize {
+			    max-width: 120px;
+			    max-height: 70px;
+			}
+    </style>
 </head>
 <body>
+    <div class="login-container">
 
-<div class="login-container">
-    <div class="text-center">
-        <span class="animate-character fantasy">Sij1-AE</span>
-        <div class="containertypewritter">
-            <p class="typewriter text-secondary">
-                <span id="typewriter-text" data-text="BPS 3501, Profesional, Integritas, Amanah"></span>
-            </p>
-        </div>
-    </div>
+				<div class="row d-flex">
+					<div class="col-lg-6 col-md-8 px-3 ml-3 mr-3 w-100">
+						<span class="fw-light">
+							<span class="animate-character fantasy">Login Sij1-AE</span>
+						</span>
+						<div class="containertypewritter">
+						  	<p class="typewriter text-secondary">
+						    	<span data-text="BPS 3501, Profesional, Integritas, Amanah"></span>
+						  	</p>
+						</div>
+						
+					</div>
+				</div>
 
-    <form id="loginForm">
-        <label class="form-label fw-bold">Username</label>
-        <input type="text" id="username" placeholder="Masukkan username" required>
+        <form id="loginForm">
+            <label for="username">Username</label>
+            <input type="text" id="username" name="username" required>
 
-        <label class="form-label fw-bold">Password</label>
-        <input type="password" id="password" placeholder="Masukkan password" required>
+            <label for="password">Password</label>
+            <input type="password" id="password" name="password" required>
 
-        <input type="submit" value="Masuk ke Sistem">
-    </form>
-    <div id="errorMessage" class="error-message"></div>
-</div>
+            <input type="submit" value="Login">
+        </form>
+        <div id="errorMessage" class="error-message"></div>
+    </div>
+	
+	
+	<script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+	<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.bundle.min.js" integrity="sha384-pprn3073KE6tl6bjs2QrFaJGz5/SUsLqktiwsUTF55Jfv3qYSDhgCecCxMW52nD2" crossorigin="anonymous"></script>
+	
+    <script>
+		var span = document.querySelector(".typewriter span");
+			var textArr = span.getAttribute("data-text").split(", "); 
+			var maxTextIndex = textArr.length; 
 
-<script>
-    // --- LOGIC TYPEWRITER (Tetap sama dengan milikmu) ---
-    const span = document.getElementById("typewriter-text");
-    const textArr = span.getAttribute("data-text").split(", ");
-    let textIndex = 0;
+			var sPerChar = 0.10; 
+			var sBetweenWord = 1.0;
+			var textIndex = 0; 
 
-    function typing(idx, text) {
-        let charIdx = 0;
-        let typeInterval = setInterval(() => {
-            span.innerHTML += text[charIdx];
-            // Pewarnaan Berdasarkan Kata
-            if(text === "Profesional") span.style.color = "#0d6efd";
-            else if(text === "Integritas") span.style.color = "#198754";
-            else if(text === "Amanah") span.style.color = "#ffc107";
-            else span.style.color = "#6c757d";
+			typing(textIndex, textArr[textIndex]); 
 
-            if (charIdx === text.length - 1) {
-                clearInterval(typeInterval);
-                setTimeout(() => deleting(idx, text), 1500);
-            } else { charIdx++; }
-        }, 100);
-    }
+			function typing(textIndex, text) {
+			    var charIndex = 0; 
+			    var maxCharIndex = text.length - 1; 
+			    
+			    var typeInterval = setInterval(function () {
+			        span.innerHTML += text[charIndex]; 
+			        if(text=="Profesional"){
+			        	span.classList.remove("text-primary");
+			        	span.classList.remove("text-success");
+			        	span.classList.remove("text-warning");
+			        	span.classList.add("text-primary");	
+			        }else if(text=="Integritas"){
+			        	span.classList.remove("text-primary");
+			        	span.classList.remove("text-success");
+			        	span.classList.remove("text-warning");
+			        	span.classList.add("text-success");	
+			        }else if(text=="Amanah"){
+			        	span.classList.remove("text-primary");
+			        	span.classList.remove("text-success");
+			        	span.classList.remove("text-warning");
+			        	span.classList.add("text-warning");	
+			        }
+			        
+			        if (charIndex == maxCharIndex) {
+			            clearInterval(typeInterval);
+			            setTimeout(function() { deleting(textIndex, text) }, sBetweenWord * 1000); 
+			            
+			        } else {
+			            charIndex += 1; 
+			        }
+			    }, sPerChar * 1000); 
+			}
 
-    function deleting(idx, text) {
-        let charIdx = text.length;
-        let delInterval = setInterval(() => {
-            span.innerHTML = text.substr(0, charIdx - 1);
-            if (charIdx === 0) {
-                clearInterval(delInterval);
-                textIndex = (textIndex + 1) % textArr.length;
-                setTimeout(() => typing(textIndex, textArr[textIndex]), 500);
-            } else { charIdx--; }
-        }, 50);
-    }
-    typing(textIndex, textArr[textIndex]);
+			function deleting(textIndex, text) {
+			    var minCharIndex = 0; 
+			    var charIndex = text.length - 1; 
 
-    // --- LOGIC LOGIN DENGAN SHA-256 ---
-    document.getElementById('loginForm').addEventListener('submit', function(event) {
-        event.preventDefault();
+			    var typeInterval = setInterval(function () {
+			        span.innerHTML = text.substr(0, charIndex); 
+		        	span.classList.remove("text-warning");
+			        if (charIndex == minCharIndex) {
+			            clearInterval(typeInterval);
+			            textIndex + 1 == maxTextIndex ? textIndex = 0 : textIndex += 1; 
+			            setTimeout(function() { typing(textIndex, textArr[textIndex]) }, sBetweenWord * 1000); 
+			        } else {
+			            charIndex -= 1; 
+			        }
+			    }, sPerChar * 1000); 
+			}
+			
+        document.getElementById('loginForm').addEventListener('submit', function(event) {
+            event.preventDefault(); // Prevent form submission
 
-        // Hash SHA-256 untuk 'admin3501'
-        const targetUserHash = "68b12239fc4125f16279f06126620942557993a40871131105436329707248e3";
-        // Hash SHA-256 untuk 'ronggowarsito2'
-        const targetPassHash = "99015848218170f209673ca593457580644485304b045e4544079e00072f2a74";
+            // Static credentials
+            const validUsername = 'admin3501';
+            const validPassword = 'ronggowarsito2';
 
-        const uInput = document.getElementById('username').value;
-        const pInput = document.getElementById('password').value;
+            // Get input values
+            const username = document.getElementById('username').value;
+            const password = document.getElementById('password').value;
 
-        // Proses hashing input user
-        const uHash = CryptoJS.SHA256(uInput).toString();
-        const pHash = CryptoJS.SHA256(pInput).toString();
-
-        if (uHash === targetUserHash && pHash === targetPassHash) {
-            // Simpan status login di browser (berlaku selama tab/browser aktif)
-            sessionStorage.setItem('isLoggedIn', 'true');
-            // Arahkan ke halaman konten
-            window.location.href = 'index.html'; 
-        } else {
-            document.getElementById('errorMessage').textContent = 'Username atau Password salah!';
-        }
-    });
-</script>
-
+            // Validate credentials
+            if (username === validUsername && password === validPassword) {
+                // Save login state in localStorage
+                localStorage.setItem('isLoggedIn', true);
+                // Redirect to protected page
+                window.location.href = 'index.html';
+            } else {
+                document.getElementById('errorMessage').textContent = 'Username atau Password salah';
+            }
+        });
+    </script>
 </body>
-</html>
+</html> 
