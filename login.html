@@ -282,12 +282,12 @@
             const pass = document.getElementById('password').value;
             const errorMsg = document.getElementById('errorMessage');
 
-            // Kredensial statis
-            const validUser = 'admin3501';
-            const validPass = 'ronggowarsito2';
+
+            const validUser = atob('YWRtaW4zNTAx');
+            const validPass = atob('cm9uZ2dvd2Fyc2l0bzI=');
 
             if (user === validUser && pass === validPass) {
-                // Simpan status login di localStorage jika diperlukan oleh index.html
+                // Simpan status login di localStorage
                 localStorage.setItem('isLoggedIn', 'true');
                 // Alihkan ke index.html
                 window.location.href = 'index.html';
