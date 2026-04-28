@@ -173,26 +173,12 @@
             color: #94a3b8;
             line-height: 1.5;
         }
-
-        /* View States */
-        .view { display: none; }
-        .view.active { display: block; }
-
-        /* Dashboard Simulation */
-        .success-box {
-            background: white;
-            padding: 50px;
-            border-radius: 28px;
-            max-width: 500px;
-            text-align: center;
-            box-shadow: 0 25px 50px rgba(0, 0, 0, 0.2);
-        }
     </style>
 </head>
 <body>
 
     <!-- Container Utama -->
-    <div id="login-view" class="view active">
+    <div id="login-view">
         <div class="login-card">
             <div class="mb-2">
                 <span class="modern-logo">SIJI AE</span>
@@ -230,18 +216,6 @@
                 &copy; 2026 Badan Pusat Statistik Kabupaten Pacitan<br>
                 <span style="opacity: 0.7;">Penyedia Data Statistik Berkualitas untuk Indonesia Maju</span>
             </div>
-        </div>
-    </div>
-
-    <!-- Tampilan Dashboard Berhasil -->
-    <div id="dashboard-view" class="view">
-        <div class="success-box">
-            <div class="mb-4">
-                <svg width="60" height="60" viewBox="0 0 24 24" fill="none" stroke="#10b981" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path><polyline points="22 4 12 14.01 9 11.01"></polyline></svg>
-            </div>
-            <h2 class="fw-bold mb-3">Selamat Bekerja!</h2>
-            <p class="text-muted mb-4">Akses SIJI AE berhasil. Seluruh sistem informasi dan aplikasi internal kini tersedia dalam satu pintu.</p>
-            <button onclick="logout()" class="btn btn-outline-secondary px-5 rounded-pill">Keluar Portal</button>
         </div>
     </div>
 
@@ -308,10 +282,15 @@
             const pass = document.getElementById('password').value;
             const errorMsg = document.getElementById('errorMessage');
 
-            if (user === 'admin3501' && pass === 'ronggowarsito2') {
-                document.getElementById('login-view').classList.remove('active');
-                document.getElementById('dashboard-view').classList.add('active');
-                errorMsg.textContent = "";
+            // Kredensial statis
+            const validUser = 'admin3501';
+            const validPass = 'ronggowarsito2';
+
+            if (user === validUser && pass === validPass) {
+                // Simpan status login di localStorage jika diperlukan oleh index.html
+                localStorage.setItem('isLoggedIn', 'true');
+                // Alihkan ke index.html
+                window.location.href = 'index.html';
             } else {
                 errorMsg.textContent = "Akses ditolak. Username atau sandi salah.";
                 
@@ -324,12 +303,6 @@
                 ], { duration: 250 });
             }
         });
-
-        function logout() {
-            document.getElementById('dashboard-view').classList.remove('active');
-            document.getElementById('login-view').classList.add('active');
-            document.getElementById('loginForm').reset();
-        }
     </script>
 </body>
 </html>
