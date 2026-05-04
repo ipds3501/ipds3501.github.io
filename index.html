@@ -36,6 +36,7 @@
             background-color: #fcfdfe;
             color: #1e293b;
             min-height: 100vh;
+            display: none; /* MENYEMBUNYIKAN HALAMAN SEBELUM CEK LOGIN */
         }
 
         /* --- Navbar Floating Glassmorphism --- */
@@ -450,6 +451,24 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.bundle.min.js"></script>
 
     <script>
+        // --- PENJAGA AUTENTIKASI (AUTH GUARD) ---
+        (function() {
+            const isLoggedIn = localStorage.getItem('isLoggedIn') === 'true';
+            if (!isLoggedIn) {
+                // Jika belum login, tendang kembali ke login.html
+                window.location.replace("login.html");
+            } else {
+                // Jika sudah login, tampilkan halaman
+                document.body.style.display = 'block';
+                
+                // Membersihkan URL dari index.html jika diketik manual
+                if (window.location.pathname.endsWith('index.html')) {
+                    const cleanUrl = window.location.pathname.replace('index.html', '') + window.location.search;
+                    window.history.replaceState(null, '', cleanUrl);
+                }
+            }
+        })();
+
         // --- Efek Navbar Floating Saat Scroll ---
         $(window).scroll(function() {
             if ($(this).scrollTop() > 30) {
@@ -460,7 +479,6 @@
         });
 
         // --- Sistem Pengambilan Data (Pasti Tampil) ---
-        // Kita menggunakan fungsi untuk memastikan data dummy terpakai jika file .js eksternal kosong
         const getAdministrasiData = () => {
             if (typeof window.administrasi_json !== 'undefined' && window.administrasi_json.length > 0) {
                 return window.administrasi_json;
@@ -476,7 +494,6 @@
             ];
         };
 
-        // Kategori lain bisa ditambahkan dummy jika perlu, sementara kita kembalikan array kosong jika tidak ada
         const getCategoryData = (varName) => {
             return (typeof window[varName] !== 'undefined' && window[varName].length > 0) ? window[varName] : [];
         };
@@ -510,7 +527,6 @@
             }
             
             data.forEach((item, index) => {
-                // Menghitung jeda animasi agar muncul berurutan (staggered)
                 const delay = index * 0.05; 
                 
                 const appHtml = `
@@ -538,7 +554,6 @@
             $("#modalTitle").text(title);
             $("#modalSearch").val('');
             
-            // Perbarui URL Kelola Tautan sesuai file kategori
             if(githubFile) {
                 $("#add_btn").attr("href", "https://github.com/ipds3501/ipds3501.github.io/blob/master/" + githubFile);
             }
