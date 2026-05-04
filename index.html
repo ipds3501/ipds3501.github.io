@@ -1,16 +1,32 @@
 <!DOCTYPE html>
 <html lang="id">
+
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>SIJI AE ~ Portal Internal BPS Kabupaten Pacitan</title>
-    
+
     <!-- Bootstrap 5 CSS -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet">
     <!-- FontAwesome 6 -->
     <script src="https://kit.fontawesome.com/dcedc4eee7.js" crossorigin="anonymous"></script>
     <!-- Google Fonts -->
-    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=Montserrat:wght@800;900&display=swap" rel="stylesheet">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=Montserrat:wght@800;900&display=swap"
+        rel="stylesheet">
+
+    <!-- PENJAGA AUTENTIKASI (Berjalan paling awal sebelum halaman di-render) -->
+    <script>
+        (function () {
+            if (localStorage.getItem('isLoggedIn') !== 'true') {
+                window.location.replace("login.html");
+            } else if (window.location.pathname.endsWith('index.html')) {
+                // Bersihkan URL Address Bar
+                const cleanUrl = window.location.pathname.replace('index.html', '') + window.location.search;
+                window.history.replaceState(null, '', cleanUrl);
+            }
+        })();
+    </script>
 
     <style>
         :root {
@@ -18,7 +34,7 @@
             --bps-cyan: #0ea5e9;
             --white-glass: rgba(255, 255, 255, 0.7);
             --border-glass: rgba(255, 255, 255, 0.5);
-            
+
             /* Warna Aksen Kategori */
             --color-adm: #6366f1;
             --color-tek: #0ea5e9;
@@ -26,17 +42,80 @@
             --color-hum: #f43f5e;
             --color-pel: #f59e0b;
             --color-ino: #8b5cf6;
-            --color-mr:  #475569;
+            --color-mr: #475569;
         }
 
-        body, html {
+        body,
+        html {
             margin: 0;
             padding: 0;
             font-family: 'Plus Jakarta Sans', sans-serif;
             background-color: #fcfdfe;
             color: #1e293b;
             min-height: 100vh;
-            display: none; /* MENYEMBUNYIKAN HALAMAN SEBELUM CEK LOGIN */
+            overflow-x: hidden;
+        }
+
+        /* --- PRELOADER (Animasi Loading) --- */
+        #preloader {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: #fcfdfe;
+            z-index: 99999;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            transition: opacity 0.6s ease, visibility 0.6s ease;
+        }
+
+        .loader-logo {
+            font-family: 'Montserrat', sans-serif;
+            font-weight: 900;
+            font-size: 3rem;
+            background: linear-gradient(135deg, #4f46e5 0%, #0ea5e9 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            letter-spacing: -2px;
+            animation: pulse 1.5s infinite ease-in-out;
+        }
+
+        .loader-spinner {
+            width: 40px;
+            height: 40px;
+            border: 4px solid rgba(79, 70, 229, 0.1);
+            border-top-color: #4f46e5;
+            border-radius: 50%;
+            animation: spin 1s linear infinite;
+            margin-top: 20px;
+        }
+
+        @keyframes pulse {
+
+            0%,
+            100% {
+                opacity: 0.5;
+                transform: scale(0.95);
+            }
+
+            50% {
+                opacity: 1;
+                transform: scale(1);
+            }
+        }
+
+        @keyframes spin {
+            to {
+                transform: rotate(360deg);
+            }
+        }
+
+        /* Menyembunyikan scrollbar saat preloader aktif */
+        body.loading-active {
+            overflow: hidden;
         }
 
         /* --- Navbar Floating Glassmorphism --- */
@@ -44,16 +123,15 @@
             padding: 20px 0;
             background: transparent;
             position: fixed;
-            top: 0; 
+            top: 0;
             left: 50%;
             transform: translateX(-50%);
-            width: 100%; 
+            width: 100%;
             max-width: 100%;
             z-index: 1050;
             transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
         }
 
-        /* Mode "Scrolled" -> Kapsul Melayang */
         .navbar-custom.scrolled {
             top: 15px;
             width: calc(100% - 40px);
@@ -61,7 +139,7 @@
             padding: 12px 25px;
             background: rgba(255, 255, 255, 0.85);
             backdrop-filter: blur(25px);
-            box-shadow: 0 15px 40px rgba(0,0,0,0.08);
+            box-shadow: 0 15px 40px rgba(0, 0, 0, 0.08);
             border: 1px solid rgba(255, 255, 255, 0.6);
             border-radius: 50px;
         }
@@ -101,7 +179,8 @@
 
         .nav-search-box i {
             position: absolute;
-            left: 15px; top: 11px;
+            left: 15px;
+            top: 11px;
             color: #94a3b8;
             font-size: 0.9rem;
         }
@@ -117,7 +196,12 @@
             transition: all 0.3s;
         }
 
-        .btn-exit-nav:hover { background: #ef4444; color: white; transform: translateY(-2px); box-shadow: 0 5px 15px rgba(239, 68, 68, 0.3); }
+        .btn-exit-nav:hover {
+            background: #ef4444;
+            color: white;
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(239, 68, 68, 0.3);
+        }
 
         /* --- Hero Wrapper --- */
         .hero-wrapper {
@@ -129,12 +213,39 @@
         }
 
         .blob {
-            position: absolute; border-radius: 50%; filter: blur(80px); opacity: 0.3; animation: move 25s infinite alternate ease-in-out;
+            position: absolute;
+            border-radius: 50%;
+            filter: blur(80px);
+            opacity: 0.3;
+            animation: move 25s infinite alternate ease-in-out;
         }
-        .blob-1 { width: 500px; height: 500px; background: #818cf8; top: -100px; right: -50px; }
-        .blob-2 { width: 450px; height: 450px; background: #60a5fa; bottom: -100px; left: -50px; animation-delay: -5s; }
 
-        @keyframes move { 0% { transform: translate(0, 0); } 100% { transform: translate(80px, 40px); } }
+        .blob-1 {
+            width: 500px;
+            height: 500px;
+            background: #818cf8;
+            top: -100px;
+            right: -50px;
+        }
+
+        .blob-2 {
+            width: 450px;
+            height: 450px;
+            background: #60a5fa;
+            bottom: -100px;
+            left: -50px;
+            animation-delay: -5s;
+        }
+
+        @keyframes move {
+            0% {
+                transform: translate(0, 0);
+            }
+
+            100% {
+                transform: translate(80px, 40px);
+            }
+        }
 
         .hero-text-side h1 {
             font-family: 'Montserrat', sans-serif;
@@ -149,26 +260,57 @@
             animation: shineText 4s linear infinite, floatText 6s ease-in-out infinite;
         }
 
-        @keyframes shineText { to { background-position: 200% center; } }
-        @keyframes floatText { 0%, 100% { transform: translateY(0); } 50% { transform: translateY(-10px); } }
+        @keyframes shineText {
+            to {
+                background-position: 200% center;
+            }
+        }
+
+        @keyframes floatText {
+
+            0%,
+            100% {
+                transform: translateY(0);
+            }
+
+            50% {
+                transform: translateY(-10px);
+            }
+        }
 
         .hero-desc-container {
             background: rgba(255, 255, 255, 0.5);
             backdrop-filter: blur(12px);
             border: 1px solid rgba(255, 255, 255, 0.7);
-            padding: 35px; border-radius: 35px; box-shadow: 0 20px 40px rgba(0,0,0,0.02);
+            padding: 35px;
+            border-radius: 35px;
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.02);
         }
 
         .office-frame {
-            padding: 12px; background: rgba(255, 255, 255, 0.4); backdrop-filter: blur(15px);
-            border: 1px solid rgba(255, 255, 255, 0.7); border-radius: 50px;
-            box-shadow: 0 40px 80px rgba(0,0,0,0.1); transform: rotate(1deg);
+            padding: 12px;
+            background: rgba(255, 255, 255, 0.4);
+            backdrop-filter: blur(15px);
+            border: 1px solid rgba(255, 255, 255, 0.7);
+            border-radius: 50px;
+            box-shadow: 0 40px 80px rgba(0, 0, 0, 0.1);
+            transform: rotate(1deg);
         }
 
-        .office-img { width: 100%; height: auto; border-radius: 40px; display: block; }
+        .office-img {
+            width: 100%;
+            height: auto;
+            border-radius: 40px;
+            display: block;
+        }
 
         /* --- Menu Grid --- */
-        .menu-grid { margin-top: -100px; position: relative; z-index: 10; padding-bottom: 80px; }
+        .menu-grid {
+            margin-top: -100px;
+            position: relative;
+            z-index: 10;
+            padding-bottom: 80px;
+        }
 
         .menu-card {
             background: var(--white-glass);
@@ -184,36 +326,95 @@
             align-items: center;
             justify-content: center;
             text-align: center;
-            box-shadow: 0 10px 25px rgba(0,0,0,0.02);
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.02);
         }
 
         .menu-card:hover {
             transform: translateY(-15px) scale(1.02);
-            box-shadow: 0 35px 70px rgba(0,0,0,0.15);
+            box-shadow: 0 35px 70px rgba(0, 0, 0, 0.15);
         }
 
-        /* Hover Background Gradasi per Kategori */
-        .card-adm:hover { background: linear-gradient(135deg, #818cf8 0%, #4f46e5 100%); border-color: transparent; }
-        .card-tek:hover { background: linear-gradient(135deg, #38bdf8 0%, #0284c7 100%); border-color: transparent; }
-        .card-sdm:hover { background: linear-gradient(135deg, #34d399 0%, #059669 100%); border-color: transparent; }
-        .card-hum:hover { background: linear-gradient(135deg, #fb7185 0%, #e11d48 100%); border-color: transparent; }
-        .card-pel:hover { background: linear-gradient(135deg, #fbbf24 0%, #d97706 100%); border-color: transparent; }
-        .card-ino:hover { background: linear-gradient(135deg, #a78bfa 0%, #7c3aed 100%); border-color: transparent; }
-        .card-mr:hover  { background: linear-gradient(135deg, #94a3b8 0%, #475569 100%); border-color: transparent; }
+        .card-adm:hover {
+            background: linear-gradient(135deg, #818cf8 0%, #4f46e5 100%);
+            border-color: transparent;
+        }
+
+        .card-tek:hover {
+            background: linear-gradient(135deg, #38bdf8 0%, #0284c7 100%);
+            border-color: transparent;
+        }
+
+        .card-sdm:hover {
+            background: linear-gradient(135deg, #34d399 0%, #059669 100%);
+            border-color: transparent;
+        }
+
+        .card-hum:hover {
+            background: linear-gradient(135deg, #fb7185 0%, #e11d48 100%);
+            border-color: transparent;
+        }
+
+        .card-pel:hover {
+            background: linear-gradient(135deg, #fbbf24 0%, #d97706 100%);
+            border-color: transparent;
+        }
+
+        .card-ino:hover {
+            background: linear-gradient(135deg, #a78bfa 0%, #7c3aed 100%);
+            border-color: transparent;
+        }
+
+        .card-mr:hover {
+            background: linear-gradient(135deg, #94a3b8 0%, #475569 100%);
+            border-color: transparent;
+        }
 
         .icon-box {
-            width: 85px; height: 85px; border-radius: 28px;
-            display: flex; align-items: center; justify-content: center;
-            font-size: 32px; margin-bottom: 20px; transition: all 0.4s ease;
+            width: 85px;
+            height: 85px;
+            border-radius: 28px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 32px;
+            margin-bottom: 20px;
+            transition: all 0.4s ease;
         }
 
-        .card-adm .icon-box { background: #eef2ff; color: var(--color-adm); }
-        .card-tek .icon-box { background: #f0f9ff; color: var(--color-tek); }
-        .card-sdm .icon-box { background: #ecfdf5; color: var(--color-sdm); }
-        .card-hum .icon-box { background: #fff1f2; color: var(--color-hum); }
-        .card-pel .icon-box { background: #fffbeb; color: var(--color-pel); }
-        .card-ino .icon-box { background: #f5f3ff; color: var(--color-ino); }
-        .card-mr .icon-box  { background: #f1f5f9; color: var(--color-mr); }
+        .card-adm .icon-box {
+            background: #eef2ff;
+            color: var(--color-adm);
+        }
+
+        .card-tek .icon-box {
+            background: #f0f9ff;
+            color: var(--color-tek);
+        }
+
+        .card-sdm .icon-box {
+            background: #ecfdf5;
+            color: var(--color-sdm);
+        }
+
+        .card-hum .icon-box {
+            background: #fff1f2;
+            color: var(--color-hum);
+        }
+
+        .card-pel .icon-box {
+            background: #fffbeb;
+            color: var(--color-pel);
+        }
+
+        .card-ino .icon-box {
+            background: #f5f3ff;
+            color: var(--color-ino);
+        }
+
+        .card-mr .icon-box {
+            background: #f1f5f9;
+            color: var(--color-mr);
+        }
 
         .menu-card:hover .icon-box {
             transform: scale(1.15) rotate(12deg);
@@ -222,9 +423,11 @@
         }
 
         .card-title {
-            font-weight: 800; font-size: 1.6rem;
+            font-weight: 800;
+            font-size: 1.6rem;
             font-family: 'Montserrat', sans-serif;
-            color: #1e293b; margin-bottom: 0;
+            color: #1e293b;
+            margin-bottom: 0;
             letter-spacing: -1px;
             transition: color 0.3s ease;
         }
@@ -234,11 +437,6 @@
         }
 
         /* --- Glass Modal Premium --- */
-        .modal-glass-backdrop {
-            backdrop-filter: blur(15px) !important;
-            background-color: rgba(0, 0, 0, 0.3) !important;
-        }
-
         .modal-content-glass {
             background: rgba(255, 255, 255, 0.85);
             backdrop-filter: blur(30px);
@@ -262,42 +460,84 @@
             border-color: var(--color-adm);
         }
 
-        .modal-body::-webkit-scrollbar { width: 8px; }
-        .modal-body::-webkit-scrollbar-track { background: transparent; }
-        .modal-body::-webkit-scrollbar-thumb { background: rgba(0,0,0,0.1); border-radius: 10px; }
+        .modal-body::-webkit-scrollbar {
+            width: 8px;
+        }
 
-        /* App Item Animation CSS (Pasti muncul) */
+        .modal-body::-webkit-scrollbar-track {
+            background: transparent;
+        }
+
+        .modal-body::-webkit-scrollbar-thumb {
+            background: rgba(0, 0, 0, 0.1);
+            border-radius: 10px;
+        }
+
         .app-item-box {
-            background: white; border: 1px solid #f1f5f9; border-radius: 30px;
-            padding: 25px; display: flex; align-items: center; gap: 20px;
-            text-decoration: none !important; transition: transform 0.3s, box-shadow 0.3s, border-color 0.3s;
+            background: white;
+            border: 1px solid #f1f5f9;
+            border-radius: 30px;
+            padding: 25px;
+            display: flex;
+            align-items: center;
+            gap: 20px;
+            text-decoration: none !important;
+            transition: transform 0.3s, box-shadow 0.3s, border-color 0.3s;
             height: 100%;
-            /* Animasi masuk */
             opacity: 0;
             animation: slideUpFade 0.6s cubic-bezier(0.16, 1, 0.3, 1) forwards;
         }
 
         @keyframes slideUpFade {
-            0% { opacity: 0; transform: translateY(30px); }
-            100% { opacity: 1; transform: translateY(0); }
+            0% {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+
+            100% {
+                opacity: 1;
+                transform: translateY(0);
+            }
         }
 
         .app-item-box:hover {
-            transform: translateY(-8px) !important; /* Override the default animation Y position */
-            box-shadow: 0 15px 35px rgba(0,0,0,0.06);
+            transform: translateY(-8px) !important;
+            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.06);
             border-color: var(--color-adm);
         }
 
-        footer { padding: 60px 0; text-align: center; color: #94a3b8; font-size: 0.9rem; }
+        footer {
+            padding: 60px 0;
+            text-align: center;
+            color: #94a3b8;
+            font-size: 0.9rem;
+        }
 
         @media (max-width: 991px) {
-            .hero-text-side { text-align: center; margin-bottom: 60px; }
-            .hero-text-side h1 { font-size: 3.5rem; }
-            .navbar-custom.scrolled { width: calc(100% - 20px); top: 10px; }
+            .hero-text-side {
+                text-align: center;
+                margin-bottom: 60px;
+            }
+
+            .hero-text-side h1 {
+                font-size: 3.5rem;
+            }
+
+            .navbar-custom.scrolled {
+                width: calc(100% - 20px);
+                top: 10px;
+            }
         }
     </style>
 </head>
-<body>
+
+<body class="loading-active">
+
+    <!-- PRELOADER ANIMATION -->
+    <div id="preloader">
+        <div class="loader-logo">SIJI AE</div>
+        <div class="loader-spinner"></div>
+    </div>
 
     <!-- Navbar Floating Glassmorphism -->
     <nav class="navbar-custom" id="mainNavbar">
@@ -305,7 +545,7 @@
             <a class="navbar-brand" href="#">
                 <span class="logo-text">SIJI AE</span>
             </a>
-            
+
             <div class="d-flex align-items-center flex-grow-1 justify-content-center">
                 <div class="nav-search-box d-none d-md-block">
                     <i class="fas fa-search"></i>
@@ -330,13 +570,17 @@
                     <h1>SIJI AE</h1>
                     <div class="hero-desc-container">
                         <p>
-                            <strong>Siji-AE</strong> merupakan Sistem Informasi yang berisi kumpulan sistem informasi dan aplikasi yang digunakan oleh BPS Kabupaten Pacitan untuk mempermudah dalam melakukan tugas dan tanggung jawab sebagai <strong>"Penyedia Data Statistik Berkualitas untuk Indonesia Maju"</strong>.
+                            <strong>Siji-AE</strong> merupakan Sistem Informasi yang berisi kumpulan sistem informasi
+                            dan aplikasi yang digunakan oleh BPS Kabupaten Pacitan untuk mempermudah dalam melakukan
+                            tugas dan tanggung jawab sebagai <strong>"Penyedia Data Statistik Berkualitas untuk
+                                Indonesia Maju"</strong>.
                         </p>
                     </div>
                 </div>
                 <div class="col-lg-6 hero-image-side d-none d-lg-flex">
                     <div class="office-frame">
-                        <img src="https://lh3.googleusercontent.com/d/1PhgCWKkg6bSLu68Tox1uX03A9DnfRffL" alt="Kantor BPS Pacitan" class="office-img">
+                        <img src="https://lh3.googleusercontent.com/d/1PhgCWKkg6bSLu68Tox1uX03A9DnfRffL"
+                            alt="Kantor BPS Pacitan" class="office-img">
                     </div>
                 </div>
             </div>
@@ -346,56 +590,55 @@
     <!-- Main Grid -->
     <main class="container menu-grid">
         <div class="row row-cols-1 row-cols-md-2 row-cols-lg-3 g-4" id="mainMenuGrid">
-            
             <div class="col category-item" data-title="Administrasi">
-                <a href="javascript:void(0)" class="menu-card card-adm" id="administrasi_box" data-bs-toggle="modal" data-bs-target="#appModal">
+                <a href="javascript:void(0)" class="menu-card card-adm" id="administrasi_box" data-bs-toggle="modal"
+                    data-bs-target="#appModal">
                     <div class="icon-box"><i class="fas fa-file-signature"></i></div>
                     <div class="card-title">Administrasi</div>
                 </a>
             </div>
-
             <div class="col category-item" data-title="Teknis & Monitoring">
-                <a href="javascript:void(0)" class="menu-card card-tek" id="teknis_box" data-bs-toggle="modal" data-bs-target="#appModal">
+                <a href="javascript:void(0)" class="menu-card card-tek" id="teknis_box" data-bs-toggle="modal"
+                    data-bs-target="#appModal">
                     <div class="icon-box"><i class="fas fa-microchip"></i></div>
                     <div class="card-title">Teknis & Monitoring</div>
                 </a>
             </div>
-
             <div class="col category-item" data-title="Sumber Daya Manusia">
-                <a href="javascript:void(0)" class="menu-card card-sdm" id="sdm_box" data-bs-toggle="modal" data-bs-target="#appModal">
+                <a href="javascript:void(0)" class="menu-card card-sdm" id="sdm_box" data-bs-toggle="modal"
+                    data-bs-target="#appModal">
                     <div class="icon-box"><i class="fas fa-user-check"></i></div>
                     <div class="card-title">Sumber Daya Manusia</div>
                 </a>
             </div>
-
             <div class="col category-item" data-title="Kehumasan">
-                <a href="javascript:void(0)" class="menu-card card-hum" id="kehumasan_box" data-bs-toggle="modal" data-bs-target="#appModal">
+                <a href="javascript:void(0)" class="menu-card card-hum" id="kehumasan_box" data-bs-toggle="modal"
+                    data-bs-target="#appModal">
                     <div class="icon-box"><i class="fas fa-bullhorn"></i></div>
                     <div class="card-title">Kehumasan</div>
                 </a>
             </div>
-
             <div class="col category-item" data-title="Pelayanan Statistik">
-                <a href="javascript:void(0)" class="menu-card card-pel" id="pelayanan_box" data-bs-toggle="modal" data-bs-target="#appModal">
+                <a href="javascript:void(0)" class="menu-card card-pel" id="pelayanan_box" data-bs-toggle="modal"
+                    data-bs-target="#appModal">
                     <div class="icon-box"><i class="fas fa-chart-pie"></i></div>
                     <div class="card-title">Pelayanan Statistik</div>
                 </a>
             </div>
-
             <div class="col category-item" data-title="Inovasi">
-                <a href="javascript:void(0)" class="menu-card card-ino" id="inovasi_box" data-bs-toggle="modal" data-bs-target="#appModal">
+                <a href="javascript:void(0)" class="menu-card card-ino" id="inovasi_box" data-bs-toggle="modal"
+                    data-bs-target="#appModal">
                     <div class="icon-box"><i class="fas fa-rocket"></i></div>
                     <div class="card-title">Inovasi</div>
                 </a>
             </div>
-
             <div class="col category-item mx-auto" data-title="Manajemen Risiko">
-                <a href="javascript:void(0)" class="menu-card card-mr" id="mr_box" data-bs-toggle="modal" data-bs-target="#appModal">
+                <a href="javascript:void(0)" class="menu-card card-mr" id="mr_box" data-bs-toggle="modal"
+                    data-bs-target="#appModal">
                     <div class="icon-box"><i class="fas fa-shield-halved"></i></div>
                     <div class="card-title">Manajemen Risiko</div>
                 </a>
             </div>
-
         </div>
     </main>
 
@@ -406,12 +649,14 @@
                 <div class="modal-header border-0 p-5 pb-0">
                     <div class="w-100">
                         <div class="d-flex justify-content-between align-items-center mb-3">
-                            <h2 class="modal-title h3 fw-bolder" id="modalTitle" style="letter-spacing:-1px;">Kategori</h2>
+                            <h2 class="modal-title h3 fw-bolder" id="modalTitle" style="letter-spacing:-1px;">Kategori
+                            </h2>
                             <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                         </div>
                         <div class="position-relative w-100">
                             <i class="fas fa-search position-absolute" style="left:18px; top:18px; color:#94a3b8;"></i>
-                            <input type="text" id="modalSearch" class="form-control modal-search-input" placeholder="Cari aplikasi dalam kategori ini...">
+                            <input type="text" id="modalSearch" class="form-control modal-search-input"
+                                placeholder="Cari aplikasi dalam kategori ini...">
                         </div>
                     </div>
                 </div>
@@ -421,10 +666,12 @@
                     </div>
                 </div>
                 <div class="modal-footer border-0 p-4 justify-content-between bg-light bg-opacity-50">
-                    <a href="https://github.com/ipds3501" target="_blank" class="btn btn-primary rounded-pill px-4" id="add_btn">
+                    <a href="https://github.com/ipds3501" target="_blank" class="btn btn-primary rounded-pill px-4"
+                        id="add_btn">
                         <i class="fas fa-plus-circle me-2"></i>Kelola Tautan
                     </a>
-                    <button type="button" class="btn btn-light rounded-pill px-4 fw-bold" data-bs-dismiss="modal">Tutup</button>
+                    <button type="button" class="btn btn-light rounded-pill px-4 fw-bold"
+                        data-bs-dismiss="modal">Tutup</button>
                 </div>
             </div>
         </div>
@@ -433,12 +680,13 @@
     <footer>
         <div class="container">
             <p>&copy; 2026 Badan Pusat Statistik Kabupaten Pacitan</p>
-            <p class="small opacity-50">SIJI AE v6.0 - Modern & Responsif</p>
+            <p class="small opacity-50">SIJI AE v6.5 - Modern, Fungsional, Responsif</p>
         </div>
     </footer>
 
-    <!-- Koneksi ke File JS Eksternal -->
-    <script src="administrasi.js" onerror="console.warn('administrasi.js tidak ditemukan, sistem akan menggunakan data cadangan (dummy).')"></script>
+    <!-- PEMANGGILAN FILE JS EKSTERNAL DIKEMBALIKAN -->
+    <script src="administrasi.js"
+        onerror="console.warn('administrasi.js tidak ditemukan, sistem akan menggunakan data cadangan (dummy).')"></script>
     <script src="teknis.js" onerror="console.warn('teknis.js tidak ditemukan.')"></script>
     <script src="sdm.js" onerror="console.warn('sdm.js tidak ditemukan.')"></script>
     <script src="kehumasan.js" onerror="console.warn('kehumasan.js tidak ditemukan.')"></script>
@@ -446,136 +694,127 @@
     <script src="inovasi.js" onerror="console.warn('inovasi.js tidak ditemukan.')"></script>
     <script src="mr.js" onerror="console.warn('mr.js tidak ditemukan.')"></script>
 
-    <!-- Scripts -->
+    <!-- Scripts JQuery & Bootstrap -->
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.bundle.min.js"></script>
 
     <script>
-        // --- PENJAGA AUTENTIKASI (AUTH GUARD) ---
-        (function() {
-            const isLoggedIn = localStorage.getItem('isLoggedIn') === 'true';
-            if (!isLoggedIn) {
-                // Jika belum login, tendang kembali ke login.html
-                window.location.replace("login.html");
-            } else {
-                // Jika sudah login, tampilkan halaman
-                document.body.style.display = 'block';
-                
-                // Membersihkan URL dari index.html jika diketik manual
-                if (window.location.pathname.endsWith('index.html')) {
-                    const cleanUrl = window.location.pathname.replace('index.html', '') + window.location.search;
-                    window.history.replaceState(null, '', cleanUrl);
+        $(window).on('load', function () {
+            // MENGHILANGKAN PRELOADER SETELAH HALAMAN SIAP
+            setTimeout(function () {
+                $('#preloader').css('opacity', '0');
+                setTimeout(function () {
+                    $('#preloader').css('visibility', 'hidden');
+                    $('body').removeClass('loading-active');
+                }, 600);
+            }, 500); // Tunda sedikit agar animasi logo berdenyut terlihat elegan
+        });
+
+        $(document).ready(function () {
+            // --- Efek Navbar Floating Saat Scroll ---
+            $(window).scroll(function () {
+                if ($(this).scrollTop() > 30) {
+                    $('#mainNavbar').addClass('scrolled');
+                } else {
+                    $('#mainNavbar').removeClass('scrolled');
                 }
-            }
-        })();
-
-        // --- Efek Navbar Floating Saat Scroll ---
-        $(window).scroll(function() {
-            if ($(this).scrollTop() > 30) {
-                $('#mainNavbar').addClass('scrolled');
-            } else {
-                $('#mainNavbar').removeClass('scrolled');
-            }
-        });
-
-        // --- Sistem Pengambilan Data (Pasti Tampil) ---
-        const getAdministrasiData = () => {
-            if (typeof window.administrasi_json !== 'undefined' && window.administrasi_json.length > 0) {
-                return window.administrasi_json;
-            }
-            return [
-                {nama: "E-Office", url: "#", ikon: "https://i.imgur.com/TLYK71d.png", desc: "Akses persuratan elektronik BPS."},
-                {nama: "Simpeg", url: "#", ikon: "https://i.imgur.com/TLYK71d.png", desc: "Manajemen Kepegawaian terpusat."},
-                {nama: "Sakti", url: "#", ikon: "https://i.imgur.com/TLYK71d.png", desc: "Aplikasi Keuangan Instansi."},
-                {nama: "Sirup", url: "#", ikon: "https://i.imgur.com/TLYK71d.png", desc: "Rencana Umum Pengadaan BPS."},
-                {nama: "LHKPN", url: "#", ikon: "https://i.imgur.com/TLYK71d.png", desc: "Laporan Harta Kekayaan Pegawai."},
-                {nama: "Sipedals", url: "#", ikon: "https://i.imgur.com/TLYK71d.png", desc: "Sistem Persediaan Logistik."},
-                {nama: "SMAP", url: "#", ikon: "https://i.imgur.com/TLYK71d.png", desc: "Sistem Manajemen Anti Penyuapan."}
-            ];
-        };
-
-        const getCategoryData = (varName) => {
-            return (typeof window[varName] !== 'undefined' && window[varName].length > 0) ? window[varName] : [];
-        };
-
-        let currentCategoryData = [];
-
-        // 1. Filter Kategori Halaman Utama
-        $("#categorySearch").on("keyup", function() {
-            let value = $(this).val().toLowerCase();
-            $("#mainMenuGrid .category-item").filter(function() {
-                $(this).toggle($(this).attr('data-title').toLowerCase().indexOf(value) > -1);
             });
-        });
 
-        // 2. Filter Aplikasi Modal
-        $("#modalSearch").on("keyup", function() {
-            let value = $(this).val().toLowerCase();
-            renderApps(currentCategoryData.filter(item => 
-                item.nama.toLowerCase().indexOf(value) > -1 || (item.desc && item.desc.toLowerCase().indexOf(value) > -1)
-            ));
-        });
+            // --- Sistem Pengambilan Data (Memprioritaskan file JS eksternal) ---
+            const getAdministrasiData = () => {
+                if (typeof window.administrasi_json !== 'undefined' && window.administrasi_json.length > 0) {
+                    return window.administrasi_json;
+                }
+                return [
+                    { nama: "E-Office", url: "#", ikon: "https://i.imgur.com/TLYK71d.png", desc: "Akses persuratan elektronik BPS." },
+                    { nama: "Simpeg", url: "#", ikon: "https://i.imgur.com/TLYK71d.png", desc: "Manajemen Kepegawaian terpusat." },
+                    { nama: "Sakti", url: "#", ikon: "https://i.imgur.com/TLYK71d.png", desc: "Aplikasi Keuangan Instansi." }
+                ];
+            };
 
-        // 3. Render Apps ke Dalam Modal (Dengan Animasi CSS)
-        function renderApps(data) {
-            const container = $("#submenu_container");
-            container.empty();
-            
-            if (!data || data.length === 0) {
-                container.html('<div class="col-12 text-center p-5 opacity-40">Aplikasi tidak ditemukan atau tautan belum tersedia.</div>');
-                return;
-            }
-            
-            data.forEach((item, index) => {
-                const delay = index * 0.05; 
-                
-                const appHtml = `
-                    <div class="col">
-                        <a href="${item.url || '#'}" target="_blank" class="app-item-box" style="animation-delay: ${delay}s">
-                            <div class="flex-shrink-0">
-                                <img src="${item.ikon || 'https://i.imgur.com/TLYK71d.png'}" 
-                                     style="width:50px; height:50px; object-fit:contain;" 
-                                     alt="Icon" 
-                                     onerror="this.src='https://i.imgur.com/TLYK71d.png'">
-                            </div>
-                            <div class="app-info">
-                                <div class="fw-bold text-dark" style="font-size:1.05rem;">${item.nama}</div>
-                                <div class="text-muted small" style="line-height:1.2;">${item.desc || 'Klik untuk membuka sistem'}</div>
-                            </div>
-                        </a>
-                    </div>
-                `;
-                container.append(appHtml);
+            const getCategoryData = (varName) => {
+                return (typeof window[varName] !== 'undefined' && window[varName].length > 0) ? window[varName] : [];
+            };
+
+            let currentCategoryData = [];
+
+            // 1. Filter Kategori Halaman Utama
+            $("#categorySearch").on("keyup", function () {
+                let value = $(this).val().toLowerCase();
+                $("#mainMenuGrid .category-item").filter(function () {
+                    $(this).toggle($(this).attr('data-title').toLowerCase().indexOf(value) > -1);
+                });
             });
-        }
 
-        // 4. Fungsi Buka Modal & Memuat Data
-        function openCategory(title, data, githubFile) {
-            $("#modalTitle").text(title);
-            $("#modalSearch").val('');
-            
-            if(githubFile) {
-                $("#add_btn").attr("href", "https://github.com/ipds3501/ipds3501.github.io/blob/master/" + githubFile);
+            // 2. Filter Aplikasi Modal
+            $("#modalSearch").on("keyup", function () {
+                let value = $(this).val().toLowerCase();
+                renderApps(currentCategoryData.filter(item =>
+                    item.nama.toLowerCase().indexOf(value) > -1 || (item.desc && item.desc.toLowerCase().indexOf(value) > -1)
+                ));
+            });
+
+            // 3. Render Apps ke Dalam Modal
+            function renderApps(data) {
+                const container = $("#submenu_container");
+                container.empty();
+
+                if (!data || data.length === 0) {
+                    container.html('<div class="col-12 text-center p-5 opacity-40">Aplikasi tidak ditemukan atau tautan belum tersedia.</div>');
+                    return;
+                }
+
+                data.forEach((item, index) => {
+                    const delay = index * 0.05;
+                    const appHtml = `
+                        <div class="col">
+                            <a href="${item.url || '#'}" target="_blank" class="app-item-box" style="animation-delay: ${delay}s">
+                                <div class="flex-shrink-0">
+                                    <img src="${item.ikon || 'https://i.imgur.com/TLYK71d.png'}" 
+                                         style="width:50px; height:50px; object-fit:contain;" 
+                                         alt="Icon" 
+                                         onerror="this.src='https://i.imgur.com/TLYK71d.png'">
+                                </div>
+                                <div class="app-info">
+                                    <div class="fw-bold text-dark" style="font-size:1.05rem;">${item.nama}</div>
+                                    <div class="text-muted small" style="line-height:1.2;">${item.desc || 'Klik untuk membuka sistem'}</div>
+                                </div>
+                            </a>
+                        </div>
+                    `;
+                    container.append(appHtml);
+                });
             }
-            
-            currentCategoryData = data;
-            renderApps(data);
-        }
 
-        // Klik Kategori Menu
-        $("#administrasi_box").click(() => openCategory("Administrasi", getAdministrasiData(), "administrasi.js"));
-        $("#teknis_box").click(() => openCategory("Teknis & Monitoring", getCategoryData('teknis_json'), "teknis.js"));
-        $("#sdm_box").click(() => openCategory("Sumber Daya Manusia", getCategoryData('sdm_json'), "sdm.js"));
-        $("#kehumasan_box").click(() => openCategory("Kehumasan", getCategoryData('kehumasan_json'), "kehumasan.js"));
-        $("#pelayanan_box").click(() => openCategory("Pelayanan Statistik", getCategoryData('pelayanan_json'), "pelayanan.js"));
-        $("#inovasi_box").click(() => openCategory("Inovasi", getCategoryData('inovasi_json'), "inovasi.js"));
-        $("#mr_box").click(() => openCategory("Manajemen Risiko", getCategoryData('mr_json'), "mr.js"));
+            // 4. Fungsi Buka Modal & Memuat Data
+            function openCategory(title, data, githubFile) {
+                $("#modalTitle").text(title);
+                $("#modalSearch").val('');
 
-        // Tombol Keluar (Logout)
-        $("#logoutButton").click(() => {
-            localStorage.removeItem('isLoggedIn');
-            window.location.replace("login.html");
+                if (githubFile) {
+                    $("#add_btn").attr("href", "https://github.com/ipds3501/ipds3501.github.io/blob/master/" + githubFile);
+                }
+
+                currentCategoryData = data;
+                renderApps(data);
+            }
+
+            // Klik Kategori Menu
+            $("#administrasi_box").click(() => openCategory("Administrasi", getAdministrasiData(), "administrasi.js"));
+            $("#teknis_box").click(() => openCategory("Teknis & Monitoring", getCategoryData('teknis_json'), "teknis.js"));
+            $("#sdm_box").click(() => openCategory("Sumber Daya Manusia", getCategoryData('sdm_json'), "sdm.js"));
+            $("#kehumasan_box").click(() => openCategory("Kehumasan", getCategoryData('kehumasan_json'), "kehumasan.js"));
+            $("#pelayanan_box").click(() => openCategory("Pelayanan Statistik", getCategoryData('pelayanan_json'), "pelayanan.js"));
+            $("#inovasi_box").click(() => openCategory("Inovasi", getCategoryData('inovasi_json'), "inovasi.js"));
+            $("#mr_box").click(() => openCategory("Manajemen Risiko", getCategoryData('mr_json'), "mr.js"));
+
+            // Tombol Keluar (Logout)
+            $("#logoutButton").click(() => {
+                localStorage.removeItem('isLoggedIn');
+                window.location.replace("login.html");
+            });
         });
     </script>
 </body>
+
 </html>
