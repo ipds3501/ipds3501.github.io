@@ -15,13 +15,12 @@
         href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=Montserrat:wght@800;900&display=swap"
         rel="stylesheet">
 
-    <!-- PENJAGA AUTENTIKASI (Berjalan paling awal sebelum halaman di-render) -->
+    <!-- PENJAGA AUTENTIKASI -->
     <script>
         (function () {
             if (localStorage.getItem('isLoggedIn') !== 'true') {
                 window.location.replace("login.html");
             } else if (window.location.pathname.endsWith('index.html')) {
-                // Bersihkan URL Address Bar
                 const cleanUrl = window.location.pathname.replace('index.html', '') + window.location.search;
                 window.history.replaceState(null, '', cleanUrl);
             }
@@ -35,7 +34,6 @@
             --white-glass: rgba(255, 255, 255, 0.7);
             --border-glass: rgba(255, 255, 255, 0.5);
 
-            /* Warna Aksen Kategori */
             --color-adm: #6366f1;
             --color-tek: #0ea5e9;
             --color-sdm: #10b981;
@@ -56,7 +54,7 @@
             overflow-x: hidden;
         }
 
-        /* --- PRELOADER (Animasi Loading) --- */
+        /* --- PRELOADER --- */
         #preloader {
             position: fixed;
             top: 0;
@@ -113,12 +111,11 @@
             }
         }
 
-        /* Menyembunyikan scrollbar saat preloader aktif */
         body.loading-active {
             overflow: hidden;
         }
 
-        /* --- Navbar Floating Glassmorphism --- */
+        /* --- Navbar Floating --- */
         .navbar-custom {
             padding: 20px 0;
             background: transparent;
@@ -156,15 +153,16 @@
 
         .nav-search-box {
             position: relative;
-            max-width: 300px;
+            max-width: 350px;
             margin: 0 20px;
+            width: 100%;
         }
 
         .nav-search-box input {
             border-radius: 50px;
             border: 1px solid #e2e8f0;
-            padding: 8px 15px 8px 38px;
-            font-size: 0.85rem;
+            padding: 9px 15px 9px 40px;
+            font-size: 0.9rem;
             width: 100%;
             background: rgba(255, 255, 255, 0.7);
             transition: all 0.3s;
@@ -179,10 +177,10 @@
 
         .nav-search-box i {
             position: absolute;
-            left: 15px;
-            top: 11px;
+            left: 16px;
+            top: 12px;
             color: #94a3b8;
-            font-size: 0.9rem;
+            font-size: 1rem;
         }
 
         .btn-exit-nav {
@@ -438,7 +436,7 @@
 
         /* --- Glass Modal Premium --- */
         .modal-content-glass {
-            background: rgba(255, 255, 255, 0.85);
+            background: rgba(255, 255, 255, 0.95);
             backdrop-filter: blur(30px);
             border: 1px solid rgba(255, 255, 255, 0.5);
             border-radius: 50px;
@@ -506,6 +504,23 @@
             border-color: var(--color-adm);
         }
 
+        /* Tombol Filter Tahun MR */
+        .btn-filter-year {
+            border: 2px solid #e2e8f0;
+            color: #64748b;
+            font-weight: 700;
+            border-radius: 30px;
+            padding: 8px 24px;
+            transition: all 0.3s;
+        }
+
+        .btn-filter-year.active-year {
+            background: var(--bps-blue);
+            border-color: var(--bps-blue);
+            color: white;
+            box-shadow: 0 5px 15px rgba(0, 77, 149, 0.3);
+        }
+
         footer {
             padding: 60px 0;
             text-align: center;
@@ -539,7 +554,7 @@
         <div class="loader-spinner"></div>
     </div>
 
-    <!-- Navbar Floating Glassmorphism -->
+    <!-- Navbar -->
     <nav class="navbar-custom" id="mainNavbar">
         <div class="container d-flex justify-content-between align-items-center">
             <a class="navbar-brand" href="#">
@@ -549,7 +564,7 @@
             <div class="d-flex align-items-center flex-grow-1 justify-content-center">
                 <div class="nav-search-box d-none d-md-block">
                     <i class="fas fa-search"></i>
-                    <input type="text" id="categorySearch" placeholder="Cari kategori menu...">
+                    <input type="text" id="globalSearchInput" placeholder="Cari aplikasi atau sistem...">
                 </div>
             </div>
 
@@ -635,7 +650,7 @@
             <div class="col category-item mx-auto" data-title="Manajemen Risiko">
                 <a href="javascript:void(0)" class="menu-card card-mr" id="mr_box" data-bs-toggle="modal"
                     data-bs-target="#appModal">
-                    <div class="icon-box"><i class="fas fa-shield-halved"></i></div>
+                    <div class="icon-box"><i class="fas fa-shield-alt"></i></div>
                     <div class="card-title">Manajemen Risiko</div>
                 </a>
             </div>
@@ -646,24 +661,27 @@
     <div class="modal fade" id="appModal" tabindex="-1" aria-hidden="true">
         <div class="modal-dialog modal-xl modal-dialog-centered modal-dialog-scrollable">
             <div class="modal-content modal-content-glass">
-                <div class="modal-header border-0 p-5 pb-0">
-                    <div class="w-100">
-                        <div class="d-flex justify-content-between align-items-center mb-3">
-                            <h2 class="modal-title h3 fw-bolder" id="modalTitle" style="letter-spacing:-1px;">Kategori
-                            </h2>
-                            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                        </div>
-                        <div class="position-relative w-100">
-                            <i class="fas fa-search position-absolute" style="left:18px; top:18px; color:#94a3b8;"></i>
-                            <input type="text" id="modalSearch" class="form-control modal-search-input"
-                                placeholder="Cari aplikasi dalam kategori ini...">
+                <div class="modal-header border-0 p-5 pb-0 flex-column align-items-start">
+                    <div class="d-flex justify-content-between align-items-center w-100 mb-3">
+                        <h2 class="modal-title h3 fw-bolder" id="modalTitle" style="letter-spacing:-1px;">Kategori</h2>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+
+                    <div class="position-relative w-100" id="categorySearchContainer">
+                        <i class="fas fa-search position-absolute" style="left:18px; top:18px; color:#94a3b8;"></i>
+                        <input type="text" id="modalSearch" class="form-control modal-search-input"
+                            placeholder="Cari aplikasi dalam kategori ini...">
+                    </div>
+
+                    <div id="mrFilterContainer" class="w-100 mt-3 d-none">
+                        <div class="d-flex gap-2">
+                            <button class="btn btn-filter-year" data-year="2024">Tahun 2024</button>
+                            <button class="btn btn-filter-year" data-year="2025">Tahun 2025</button>
                         </div>
                     </div>
                 </div>
-                <div class="modal-body p-5">
-                    <div class="row row-cols-1 row-cols-md-2 row-cols-lg-3 g-4" id="submenu_container">
-                        <!-- Items dimuat via JS -->
-                    </div>
+                <div class="modal-body p-5 pt-4">
+                    <div class="row row-cols-1 row-cols-md-2 row-cols-lg-3 g-4" id="submenu_container"></div>
                 </div>
                 <div class="modal-footer border-0 p-4 justify-content-between bg-light bg-opacity-50">
                     <a href="https://github.com/ipds3501" target="_blank" class="btn btn-primary rounded-pill px-4"
@@ -680,13 +698,12 @@
     <footer>
         <div class="container">
             <p>&copy; 2026 Badan Pusat Statistik Kabupaten Pacitan</p>
-            <p class="small opacity-50">SIJI AE v6.5 - Modern, Fungsional, Responsif</p>
+            <p class="small opacity-50">SIJI AE v7.8 - Anti Konflik & Sinkronisasi Data</p>
         </div>
     </footer>
 
-    <!-- PEMANGGILAN FILE JS EKSTERNAL DIKEMBALIKAN -->
-    <script src="administrasi.js"
-        onerror="console.warn('administrasi.js tidak ditemukan, sistem akan menggunakan data cadangan (dummy).')"></script>
+    <!-- PEMANGGILAN FILE JS EKSTERNAL -->
+    <script src="administrasi.js" onerror="console.warn('administrasi.js tidak ditemukan')"></script>
     <script src="teknis.js" onerror="console.warn('teknis.js tidak ditemukan.')"></script>
     <script src="sdm.js" onerror="console.warn('sdm.js tidak ditemukan.')"></script>
     <script src="kehumasan.js" onerror="console.warn('kehumasan.js tidak ditemukan.')"></script>
@@ -700,67 +717,58 @@
 
     <script>
         $(window).on('load', function () {
-            // MENGHILANGKAN PRELOADER SETELAH HALAMAN SIAP
             setTimeout(function () {
                 $('#preloader').css('opacity', '0');
                 setTimeout(function () {
                     $('#preloader').css('visibility', 'hidden');
                     $('body').removeClass('loading-active');
                 }, 600);
-            }, 500); // Tunda sedikit agar animasi logo berdenyut terlihat elegan
+            }, 600);
         });
 
         $(document).ready(function () {
-            // --- Efek Navbar Floating Saat Scroll ---
+            // Navbar Floating
             $(window).scroll(function () {
-                if ($(this).scrollTop() > 30) {
-                    $('#mainNavbar').addClass('scrolled');
-                } else {
-                    $('#mainNavbar').removeClass('scrolled');
-                }
+                if ($(this).scrollTop() > 30) $('#mainNavbar').addClass('scrolled');
+                else $('#mainNavbar').removeClass('scrolled');
             });
 
-            // --- Sistem Pengambilan Data (Memprioritaskan file JS eksternal) ---
-            const getAdministrasiData = () => {
-                if (typeof window.administrasi_json !== 'undefined' && window.administrasi_json.length > 0) {
-                    return window.administrasi_json;
+            // --- FUNGSI PENGAMBILAN DATA LANGSUNG (ANTI-ERROR) ---
+            const safeDataFetch = (varName) => {
+                try {
+                    // Cek variabel langsung berdasarkan namanya
+                    if (varName === 'mr_json') return mr_json;
+                    if (varName === 'administrasi_json') return administrasi_json;
+                    if (varName === 'teknis_json') return teknis_json;
+                    if (varName === 'sdm_json') return sdm_json;
+                    if (varName === 'kehumasan_json') return kehumasan_json;
+                    if (varName === 'pelayanan_json') return pelayanan_json;
+                    if (varName === 'inovasi_json') return inovasi_json;
+                } catch (e) {
+                    // Jika file JS tidak ada atau variabel belum dibuat, kembalikan array kosong
+                    return [];
                 }
-                return [
-                    { nama: "E-Office", url: "#", ikon: "https://i.imgur.com/TLYK71d.png", desc: "Akses persuratan elektronik BPS." },
-                    { nama: "Simpeg", url: "#", ikon: "https://i.imgur.com/TLYK71d.png", desc: "Manajemen Kepegawaian terpusat." },
-                    { nama: "Sakti", url: "#", ikon: "https://i.imgur.com/TLYK71d.png", desc: "Aplikasi Keuangan Instansi." }
-                ];
+                return [];
             };
 
-            const getCategoryData = (varName) => {
-                return (typeof window[varName] !== 'undefined' && window[varName].length > 0) ? window[varName] : [];
+            const getAllApps = () => {
+                return [
+                    ...safeDataFetch('administrasi_json'), ...safeDataFetch('teknis_json'),
+                    ...safeDataFetch('sdm_json'), ...safeDataFetch('kehumasan_json'),
+                    ...safeDataFetch('pelayanan_json'), ...safeDataFetch('inovasi_json'),
+                    ...safeDataFetch('mr_json')
+                ];
             };
 
             let currentCategoryData = [];
 
-            // 1. Filter Kategori Halaman Utama
-            $("#categorySearch").on("keyup", function () {
-                let value = $(this).val().toLowerCase();
-                $("#mainMenuGrid .category-item").filter(function () {
-                    $(this).toggle($(this).attr('data-title').toLowerCase().indexOf(value) > -1);
-                });
-            });
-
-            // 2. Filter Aplikasi Modal
-            $("#modalSearch").on("keyup", function () {
-                let value = $(this).val().toLowerCase();
-                renderApps(currentCategoryData.filter(item =>
-                    item.nama.toLowerCase().indexOf(value) > -1 || (item.desc && item.desc.toLowerCase().indexOf(value) > -1)
-                ));
-            });
-
-            // 3. Render Apps ke Dalam Modal
+            // --- RENDER APLIKASI ---
             function renderApps(data) {
                 const container = $("#submenu_container");
                 container.empty();
 
                 if (!data || data.length === 0) {
-                    container.html('<div class="col-12 text-center p-5 opacity-40">Aplikasi tidak ditemukan atau tautan belum tersedia.</div>');
+                    container.html('<div class="col-12 text-center p-5 opacity-40">Tautan tidak ditemukan / Belum Tersedia.</div>');
                     return;
                 }
 
@@ -772,8 +780,7 @@
                                 <div class="flex-shrink-0">
                                     <img src="${item.ikon || 'https://i.imgur.com/TLYK71d.png'}" 
                                          style="width:50px; height:50px; object-fit:contain;" 
-                                         alt="Icon" 
-                                         onerror="this.src='https://i.imgur.com/TLYK71d.png'">
+                                         alt="Icon" onerror="this.src='https://i.imgur.com/TLYK71d.png'">
                                 </div>
                                 <div class="app-info">
                                     <div class="fw-bold text-dark" style="font-size:1.05rem;">${item.nama}</div>
@@ -786,29 +793,94 @@
                 });
             }
 
-            // 4. Fungsi Buka Modal & Memuat Data
+            // --- BUKA MODAL ---
             function openCategory(title, data, githubFile) {
+                currentCategoryData = data;
+
                 $("#modalTitle").text(title);
                 $("#modalSearch").val('');
+                $("#categorySearchContainer").removeClass('d-none');
+                $("#add_btn").removeClass('d-none');
 
                 if (githubFile) {
                     $("#add_btn").attr("href", "https://github.com/ipds3501/ipds3501.github.io/blob/master/" + githubFile);
                 }
 
-                currentCategoryData = data;
-                renderApps(data);
+                // Logika Filter Manajemen Risiko
+                if (title === "Manajemen Risiko") {
+                    $("#categorySearchContainer").addClass('d-none');
+                    $("#mrFilterContainer").removeClass('d-none');
+
+                    $('.btn-filter-year').removeClass('active-year');
+                    $('.btn-filter-year[data-year="2024"]').addClass('active-year');
+
+                    filterMRByYear(2024);
+                } else {
+                    $("#mrFilterContainer").addClass('d-none');
+                    renderApps(data);
+                }
             }
 
-            // Klik Kategori Menu
-            $("#administrasi_box").click(() => openCategory("Administrasi", getAdministrasiData(), "administrasi.js"));
-            $("#teknis_box").click(() => openCategory("Teknis & Monitoring", getCategoryData('teknis_json'), "teknis.js"));
-            $("#sdm_box").click(() => openCategory("Sumber Daya Manusia", getCategoryData('sdm_json'), "sdm.js"));
-            $("#kehumasan_box").click(() => openCategory("Kehumasan", getCategoryData('kehumasan_json'), "kehumasan.js"));
-            $("#pelayanan_box").click(() => openCategory("Pelayanan Statistik", getCategoryData('pelayanan_json'), "pelayanan.js"));
-            $("#inovasi_box").click(() => openCategory("Inovasi", getCategoryData('inovasi_json'), "inovasi.js"));
-            $("#mr_box").click(() => openCategory("Manajemen Risiko", getCategoryData('mr_json'), "mr.js"));
+            // FILTER TAHUN MR
+            function filterMRByYear(year) {
+                // Gunakan '==' agar tipe string/number terbaca sama
+                let filtered = currentCategoryData.filter(item => item.year == year);
+                renderApps(filtered);
+            }
 
-            // Tombol Keluar (Logout)
+            $(".btn-filter-year").click(function () {
+                $(".btn-filter-year").removeClass('active-year');
+                $(this).addClass('active-year');
+                let selectedYear = $(this).data("year");
+                filterMRByYear(selectedYear);
+            });
+
+            // --- EVENT KLIK (Menggunakan .off() agar kebal dari bentrokan file JS lama) ---
+            $("#administrasi_box").off('click').click(() => openCategory("Administrasi", safeDataFetch('administrasi_json'), "administrasi.js"));
+            $("#teknis_box").off('click').click(() => openCategory("Teknis & Monitoring", safeDataFetch('teknis_json'), "teknis.js"));
+            $("#sdm_box").off('click').click(() => openCategory("Sumber Daya Manusia", safeDataFetch('sdm_json'), "sdm.js"));
+            $("#kehumasan_box").off('click').click(() => openCategory("Kehumasan", safeDataFetch('kehumasan_json'), "kehumasan.js"));
+            $("#pelayanan_box").off('click').click(() => openCategory("Pelayanan Statistik", safeDataFetch('pelayanan_json'), "pelayanan.js"));
+            $("#inovasi_box").off('click').click(() => openCategory("Inovasi", safeDataFetch('inovasi_json'), "inovasi.js"));
+            $("#mr_box").off('click').click(() => openCategory("Manajemen Risiko", safeDataFetch('mr_json'), "mr.js"));
+
+            // --- GLOBAL SEARCH ---
+            let searchTimeout;
+            $("#globalSearchInput").on("keyup", function () {
+                clearTimeout(searchTimeout);
+                let val = $(this).val().toLowerCase();
+
+                searchTimeout = setTimeout(() => {
+                    if (val.length > 0) {
+                        let allData = getAllApps();
+                        let searchResult = allData.filter(item =>
+                            item.nama.toLowerCase().includes(val) ||
+                            (item.desc && item.desc.toLowerCase().includes(val))
+                        );
+
+                        $("#modalTitle").text('Hasil Pencarian: "' + val + '"');
+                        $("#categorySearchContainer").addClass('d-none');
+                        $("#mrFilterContainer").addClass('d-none');
+                        $("#add_btn").addClass('d-none');
+
+                        renderApps(searchResult);
+                        $('#appModal').modal('show');
+                    }
+                }, 300);
+            });
+
+            $('#appModal').on('hidden.bs.modal', function () {
+                $("#globalSearchInput").val('');
+            });
+
+            $("#modalSearch").on("keyup", function () {
+                let val = $(this).val().toLowerCase();
+                renderApps(currentCategoryData.filter(item =>
+                    item.nama.toLowerCase().includes(val) ||
+                    (item.desc && item.desc.toLowerCase().includes(val))
+                ));
+            });
+
             $("#logoutButton").click(() => {
                 localStorage.removeItem('isLoggedIn');
                 window.location.replace("login.html");
