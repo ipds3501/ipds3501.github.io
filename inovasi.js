@@ -6,6 +6,12 @@ inovasi_json = [
 			  	url: "https://dpace.herokuapp.com/"
 			},
 			{
+			  	nama: "Lintas Pacitan",
+			  	desc: "Literasi Statistik dan Indikator Strategis",
+			  	ikon: "https://imgur.com/a/SoYkqR1",
+			  	url: "https://literasi-statistik.vercel.app/"
+			},
+			{
 			  	nama: "RAMUAN IMPIAN DAKU",
 			  	desc: "Rapat Mingguan dengan Pimpinan Bertindak Lanjut.",
 			  	ikon: "https://i.imgur.com/6IebV1U.png",
