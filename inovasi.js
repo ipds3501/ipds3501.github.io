@@ -8,7 +8,7 @@ inovasi_json = [
 			{
 			  	nama: "Lintas Pacitan",
 			  	desc: "Literasi Statistik dan Indikator Strategis",
-			  	ikon: "https://imgur.com/a/SoYkqR1",
+			  	ikon: "https://i.imgur.com/DoOcHYH.png",
 			  	url: "https://literasi-statistik.vercel.app/"
 			},
 			{
