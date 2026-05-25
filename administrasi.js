@@ -51,7 +51,7 @@ administrasi_json = [
 				"nama": "Pengadaan 3501",
 				"desc": "Sistem Pengelolaan Pengadaan BPS Kabupaten Pacitan",
 				"ikon": "https://i.imgur.com/zYsoxkG.png",
-			  	"url": "https://docs.google.com/spreadsheets/d/1fWK3EtiivE41mDqzsDg6QVkT_QKGbUi3DW7bQWWkDGk/edit#gid=565207944"
+			  	"url": "https://drive.google.com/drive/folders/1lM1hNK_pORP_eNIqXCY1Lyd3bgILeV_q"
 			},
 			{
 				"nama": "Pedoman Administrasi",
